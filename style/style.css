@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* -- header -- */
+
+header {
+    height: 80px;
+    background-color: green;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+body {
+    position: relative;
+}
+/* -- flippin -- */
+.container { 
+    width: auto;
+    height: 400px;
+    position: relative;
+    perspective: 800px;
+    margin-top: 80px;
+}
+
+#card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+#card figure {
+    margin: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+#card .front {
+    background: red;
+}
+#card .back {
+    background: blue;
+    transform: rotateY( 180deg );
+}
+#card { transform-origin: right center; }
+
+#card.flipped {
+    transform: translateX( -100% ) rotateY( -180deg );
+}
