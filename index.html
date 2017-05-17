@@ -7,28 +7,73 @@
         <link rel="stylesheet" href="style/style.css">
 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="js/flip.js"></script>
+
 
     </head>
 
     <header>
-
+        <div class="widthwrapperheader">
+            <div id="logowrapper">
+                <a href="index.html">
+                    <img src="img/logo.png" id="desklogo" alt="Flip the Burger Logo">
+                    <!--<img src="img/logomobil.png" id="mobillogo" alt="Flip the Burger Logo">-->
+                </a>
+            </div>
+            <nav id="desknav" class="cl-effect-4">
+                <li><a href="#overflowxwrapper">Order</a></li>
+                <li><a href="#order">Menu</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#social">Social</a></li>
+                <li><a href="#gallery" style="padding-right: 0px;">Gallery</a></li>
+            </nav>
+        </div>
     </header>
 
 
 
     <body>
-        <section class="container">
-            <div id="card" class="flipped">
-                <figure class="front">1</figure>
-                <figure class="back">2</figure>
-            </div>
-        </section>
+        <div id="overflowxwrapper">
+            <section id="attention">
+                <div id="mobilblackbox"></div>
+                <img src="img/burgerattention.jpg" id="attentionbg">
+                <img src="img/lefthand.png" id="lefthand">
+                <img src="img/righthand.png" id="righthand">
+            </section>
+
+            <section class="flipcontainer" id="order">
+                <div id="card" class="flipped">
+                    <section class="front">
+                        <button class="orderbutton"></button>
+                    </section>
+                    <section class="back">
+                        <button class="orderbutton"></button>
+                    </section>
+                </div>
+            </section>
+            
+            <section class="sectionplaceholder">
+                <h1>Menu</h1>
+            </section>
+            <section class="sectionplaceholder">
+                <h1>Location</h1>
+            </section>
+            <section class="sectionplaceholder">
+                <h1>Social Media</h1>
+            </section>
+            <section class="sectionplaceholder">
+                <h1>Gallery</h1>
+            </section>
+
+        </div>
     </body>
 
+    <script>
 
+    </script>
 
     <footer>
 
     </footer>
+    <script src="js/script.js"></script>
+    <script src="js/smoothscroll.js"></script>
 </html>

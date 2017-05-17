@@ -1,29 +1,171 @@
+@font-face {
+    font-family: Circularfont;
+    src: url(CircularStd-Book.otf); 
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, a {
+    font-family: Circularfont;
+}
+
 * {
     margin: 0;
     padding: 0;
 }
 
+body {
+    position: relative;
+    height: 2000px;
+    background-image: url('placeholderpattern.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+#overflowxwrapper {
+    overflow-x: hidden;
+}
+
+
 /* -- header -- */
 
 header {
-    height: 80px;
-    background-color: green;
+    height: 100px;
+    width: 100%;
+    background-color: #ffffff;
     position: fixed;
     top: 0;
     z-index: 100;
+    padding: 0px 10px;
+
+    box-shadow: 0px 5px 50px #222;
+}
+#desklogo {
+    height: 110px;
+    margin-top: 10px;
+    z-index: 10;
+}
+
+#desklogo:hover, #desklogo:active {
+
+}
+#logowrapper {
+    width: 178px;
+    height: 140px;
+    border-radius: 1000px;
+    background: white;
+    float: left;
+    /*box-shadow: 0px 5px 100px #222;  FIX THIS YO */    
+}
+
+.widthwrapperheader {
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 18px;
+}
+
+.widthwrapper {
+    max-width: 1160px;
+}
+
+/* -- Navigation -- */
+#desknav
+{
+    list-style: none;
+    padding: 0;
+    float: right;
+    height: 100%;
+    text-align: center;
+}
+
+#desknav > li
+{
+    position: relative;
+    float: left;
+    height: 100%;
+    margin: 0;
+}
+
+#desknav a
+{
+    color: #222;
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    line-height: 100px;
+    font-size: 1.2em;
+    font-weight: 400;
+
+    transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+
+/* -- main content -- */
+
+.sectionplaceholder {
+    height: 512px;
+    width: 100%;
+    background: linear-gradient(145deg, #c34242, #ddcb41, #ddb260, #ed844c);
+     background-size: 200%;
+}
+
+
+
+/* -- Attention -- */
+
+#attention {
+    margin-top: 100px;
+    position: relative;
+    margin-bottom: -5px;
+}
+
+#attentionbg{
     width: 100%;
 }
 
-body {
-    position: relative;
+#lefthand{
+    position: absolute;
+    z-index: 2;
+    transition: ease-in-out 3.5s;
 }
-/* -- flippin -- */
-.container { 
+
+#righthand{
+    position: absolute;
+    z-index: 2;
+    transition: ease-in-out 3.8s;
+}
+
+#lefthand.animationlh {
+    left: 0;
+    top: 0;
+}
+
+#righthand.animationrh {
+    right: 0;
+    top: 0;
+}
+
+
+/* -- flippin -- (URL: https://desandro.github.io/3dtransforms/docs/card-flip.html) */
+.flipcontainer { 
     width: auto;
-    height: 400px;
+    height: 512px;
     position: relative;
-    perspective: 800px;
-    margin-top: 80px;
+    perspective: 1200px;
+
 }
 
 #card {
@@ -31,10 +173,10 @@ body {
     height: 100%;
     position: absolute;
     transform-style: preserve-3d;
-    transition: transform 1s;
+    transition: transform 1.5s;
 }
 
-#card figure {
+#card section {
     margin: 0;
     display: block;
     position: absolute;
@@ -43,15 +185,241 @@ body {
     backface-visibility: hidden;
 }
 
+.orderbutton {
+    width: 80px;
+    height:50px;
+}
+
 #card .front {
     background: red;
+    transform: rotateY( 180deg );
 }
 #card .back {
     background: blue;
-    transform: rotateY( 180deg );
 }
-#card { transform-origin: right center; }
+
+#card { 
+    transform-origin: right center; 
+}
 
 #card.flipped {
     transform: translateX( -100% ) rotateY( -180deg );
+}
+
+/* -- MediaQ -- */
+
+
+@media all and (min-width: 0px) {
+    #lefthand{
+        display: none;
+    }
+
+    #righthand{
+        display: none;
+    }
+    #mobilblackbox {
+        height: 50px;
+        background: black;
+        margin-bottom: -1px;
+        display: block;
+    }
+    #desknav {
+        display: none;
+    }
+}
+
+@media all and (min-width: 200px) {
+    #lefthand{
+        display: block;
+        left: -70px;
+        top: -70px;
+        width: 70px;
+    }
+
+    #righthand{
+        display: block;
+        right: -60px;
+        top: -60px;
+        width: 60px
+    }
+}
+
+@media all and (min-width: 300px) {
+    #lefthand{
+
+        left: -80px;
+        top: -80px;
+        width: 80px;
+    }
+
+    #righthand{
+        right: -70px;
+        top: -70px;
+        width: 70px;
+    }
+    #mobilblackbox {
+        height: 25px;
+        background: black;
+    }
+
+} 
+@media all and (min-width: 380px) {
+    #lefthand{
+
+        left: -100px;
+        top: -100px;
+        width: 100px;
+    }
+
+    #righthand{
+        right: -90px;
+        top: -90px;
+        width: 90px;
+    }
+    #mobilblackbox {
+        height: 15px;
+        background: black;
+    }
+
+} 
+
+@media all and (min-width: 450px){
+
+}
+
+@media all and (min-width: 550px){
+    #lefthand{
+        left: -150px;
+        top: -158px;
+        width: 150px;
+    }
+
+    #righthand{
+        right: -130px;
+        top: -130px;
+        width: 130px;
+    }
+
+}
+
+@media all and (min-width: 650px){
+    #lefthand{
+        left: -170px;
+        top: -170px;
+        width: 170px;
+    }
+
+    #righthand{
+        right: -160px;
+        top: -160px;
+        width: 160px;
+    }
+
+
+}
+@media all and (min-width: 769px) {
+    #lefthand{
+        left: -190px;
+        top: -190px;
+        width: 190px;
+    }
+
+    #righthand{
+        right: -180px;
+        top: -180px;
+        width: 180px;
+    }
+
+    #mobilblackbox {
+        display: none;
+    }
+    #desknav {
+        display: block;
+    }
+    #desknav > li
+    {
+        width: 106px;
+    }
+}
+
+@media all and (min-width: 960px) {
+    #lefthand{
+        left: -230px;
+        top: -230px;
+        width: 230px;
+    }
+
+    #righthand{
+        right: -230px;
+        top: -230px;
+        width: 230px;
+    }
+    #desknav > li
+    {
+        width: 130px;
+    }
+}
+
+@media all and (min-width: 1020px) {
+    #lefthand{
+        left: -280px;
+        top: -280px;
+        width: 280px;
+    }
+
+    #righthand{
+        right: -280px;
+        top: -280px;
+        width: 280px;
+    }
+    #desknav > li
+    {
+        width: 150px;
+    }
+}
+
+@media all and (min-width: 1440px) {
+    #lefthand{
+        left: -380px;
+        top: -380px;
+        width: 380px;
+    }
+
+    #righthand{
+        right: -370px;
+        top: -370px;
+        width: 370px;
+    }
+    #desknav > li
+    {
+        width: 180px;
+    }
+
+}
+
+
+/* nav hover/active effects (URL: https://tympanus.net/codrops/2013/08/06/creative-link-effects/) */
+.cl-effect-4 a::after {
+    position: absolute;
+    top: 72%;
+    left: 15%;
+    width: 70%;
+    height: 1px;
+    background: #cc2a2a;
+    content: '';
+    opacity: 0;
+    -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+    transition: height 0.3s, opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+.cl-effect-4 a:hover::after,
+.cl-effect-4 a:active::after {
+    height: 4px;
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
 }
