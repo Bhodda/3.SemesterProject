@@ -2,6 +2,16 @@
     font-family: Circularfont;
     src: url(CircularStd-Book.otf); 
 }
+
+@font-face {
+    font-family: PorticoLightRough;
+    src: url(PorticoOutline.otf); 
+}
+
+@font-face {
+    font-family: PorticoOutline;
+    src: url(PorticoRough.otf); 
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -25,11 +35,14 @@ time, mark, audio, video, a {
 
 body {
     position: relative;
-    height: 2000px;
-    background-image: url('placeholderpattern.jpg');
+    background-image: url('patternlowopacity.png');
     background-repeat: repeat;
     background-attachment: fixed;
 }
+
+
+
+
 
 #overflowxwrapper {
     overflow-x: hidden;
@@ -39,7 +52,6 @@ body {
 /* -- header -- */
 
 header {
-    height: 100px;
     width: 100%;
     background-color: #ffffff;
     position: fixed;
@@ -54,6 +66,11 @@ header {
     margin-top: 10px;
     z-index: 10;
 }
+#mobillogo{
+    height: 66px;
+    margin-top: 7px;
+    margin-left: -18px;
+}
 
 #desklogo:hover, #desklogo:active {
 
@@ -62,7 +79,6 @@ header {
     width: 178px;
     height: 140px;
     border-radius: 1000px;
-    background: white;
     float: left;
     /*box-shadow: 0px 5px 100px #222;  FIX THIS YO */    
 }
@@ -79,6 +95,7 @@ header {
 }
 
 /* -- Navigation -- */
+/* -- desktop --*/
 #desknav
 {
     list-style: none;
@@ -112,16 +129,101 @@ header {
     -moz-transition: all 0.2s;
     -webkit-transition: all 0.2s;
 }
+/* -- mobil nav -- */
+
+
+.mobilnav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 120%;
+    background-color:#fffbf4;
+    text-align: center;
+    transform: translateX(100%);
+    transition: transform 0.7s ease;
+    border-left: 3px solid #fca309;
+    z-index: 10000;
+}
+.mobilnav.open {
+    transform: translateX(0);
+}
+.mobilnav li{
+    list-style: none;
+    line-height: 1.5em;
+}
+.mobilnav ul a{
+    text-decoration: none;
+    padding: 25px 20px;
+    display:block;
+    color: #fca309;
+    font-size: 1.3em;
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mobilnav ul a:active{
+    color: #fca309;
+    font-weight: bold;
+}
+.mobilnav ul a:hover{
+    color: #fca309;
+    font-weight: bold;
+}
+
+.burgerlist {
+    padding-top: 5%;
+}
+
+.nav-toggle{
+    float: right;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    margin-top: 5px;
+    background: url(../img/icon/burger2.png);
+}
+
+.nav-toggle:hover {
+    background: url(../img/icon/burger2hover.png);
+}
+.nav-toggle:active {
+    background: url(../img/icon/burger2hover.png);
+}
+
+
+.toggleclose{
+    float: right;
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+    background: url(../img/icon/burgerclose.png);
+    display: inline-block;
+}
+
+.toggleclose:hover{
+    background: url(../img/icon/burgerclosehover.png);
+}
+.toggleclose:active{
+    background: url(../img/icon/burgerclosehover.png);
+}
 
 /* -- main content -- */
 
 .sectionplaceholder {
     height: 512px;
     width: 100%;
-    background: linear-gradient(145deg, #c34242, #ddcb41, #ddb260, #ed844c);
-     background-size: 200%;
+    position: relative;
+    z-index: 5;   
+    background: #c34242;
+    background-size: 200%;
 }
-
+.offsetanchor {
+    display: block;
+    position: relative;
+    top: -140px;
+    visibility: hidden;
+}
 
 
 /* -- Attention -- */
@@ -129,11 +231,13 @@ header {
 #attention {
     margin-top: 100px;
     position: relative;
-    margin-bottom: -5px;
+    box-shadow: 0px 5px 50px #000;
 }
 
 #attentionbg{
     width: 100%;
+    height: auto;
+    vertical-align:top;
 }
 
 #lefthand{
@@ -158,6 +262,45 @@ header {
     top: 0;
 }
 
+#attentiontextwrapper {
+    position: absolute;
+}
+
+#attentiontextwrapper h1 {
+    color: #fff;
+    font-family: PorticoOutline;
+    text-align: center; 
+    display:none;
+}
+
+#attentiontextwrapper h2 {
+    color: #fca309;
+    text-align: center;
+    font-family: PorticoLightRough;
+    display: none;
+}
+
+.attentionstarwrapper{
+    text-align: center;
+    display: none;
+}
+.attentionstarwrapper img {
+    padding: 5px;
+    padding-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.mobilattentionstars {
+    text-align: center;
+    display: none;
+}
+.mobilattentionstars img{
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
 
 /* -- flippin -- (URL: https://desandro.github.io/3dtransforms/docs/card-flip.html) */
 .flipcontainer { 
@@ -174,6 +317,7 @@ header {
     position: absolute;
     transform-style: preserve-3d;
     transition: transform 1.5s;
+    box-shadow: 0px 5px 50px #000;
 }
 
 #card section {
@@ -206,10 +350,81 @@ header {
     transform: translateX( -100% ) rotateY( -180deg );
 }
 
+footer {
+    height: 400px;
+    
+}
+
+
+/* nav hover/active effects (URL: https://tympanus.net/codrops/2013/08/06/creative-link-effects/) */
+.cl-effect-4 a::after {
+    position: absolute;
+    top: 72%;
+    left: 15%;
+    width: 70%;
+    height: 1px;
+    background: #fca309;
+    content: '';
+    opacity: 0;
+    -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+    transition: height 0.3s, opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+.cl-effect-4 a:hover::after,
+.cl-effect-4 a:active::after {
+    height: 4px;
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+}
+
 /* -- MediaQ -- */
 
 
 @media all and (min-width: 0px) {
+    .mobilattentionstars img{
+        width: 5px;
+        height: 5px;
+    }
+    .mobilnav {
+        display: block;
+    }
+    .nav-toggle {
+        display: block;
+    }
+    #attentiontextwrapper {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        top:25%;
+    }
+
+    #attentiontextwrapper h1 {
+        font-size: 1em;
+    }
+
+    #attentiontextwrapper h2 {
+        font-size: 0.6em;
+    }
+    header{
+        height: 80px;
+    }
+    #attention{
+        margin-top: 80px;
+    }
+    #mobillogo{
+        display: block;
+    }
+    #desklogo {
+        display: none;
+    }
+    #logowrapper {
+        background: none;
+    }
     #lefthand{
         display: none;
     }
@@ -229,30 +444,54 @@ header {
 }
 
 @media all and (min-width: 200px) {
-    #lefthand{
-        display: block;
-        left: -70px;
-        top: -70px;
-        width: 70px;
+    .mobilattentionstars img{
+        width: 10px;
+        height: 10px;
+    }
+    #attentiontextwrapper {
+
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        top:22%;
     }
 
-    #righthand{
-        display: block;
-        right: -60px;
-        top: -60px;
-        width: 60px
+    #attentiontextwrapper h1 {
+        font-size: 1.2em;
+    }
+
+    #attentiontextwrapper h2 {
+        font-size: 0.7em;
     }
 }
 
 @media all and (min-width: 300px) {
-    #lefthand{
+    .mobilattentionstars img{
+        width: 14px;
+        height: 14px;
+    }
+    #attentiontextwrapper {
+        width: 46%;
+        margin-left: 27%;
+        margin-right: 27%;
+        top:20%;
+    }
+    #attentiontextwrapper h1 {
+        font-size: 0.9em;
+    }
 
+    #attentiontextwrapper h2 {
+        font-size: 0.6em;
+    }
+    #lefthand{
+        display: block;
         left: -80px;
         top: -80px;
         width: 80px;
     }
 
     #righthand{
+        display: block;
         right: -70px;
         top: -70px;
         width: 70px;
@@ -264,6 +503,13 @@ header {
 
 } 
 @media all and (min-width: 380px) {
+    #attentiontextwrapper h1 {
+        font-size: 1.2em;
+    }
+
+    #attentiontextwrapper h2 {
+        font-size: 0.75em;
+    }
     #lefthand{
 
         left: -100px;
@@ -284,10 +530,28 @@ header {
 } 
 
 @media all and (min-width: 450px){
+    .mobilattentionstars img{
+        width: 18px;
+        height: 18px;
+    }
+    #attentiontextwrapper h1 {
+        font-size: 1.4em;
+    }
 
+    #attentiontextwrapper h2 {
+        font-size: 0.9em;
+    }
 }
 
 @media all and (min-width: 550px){
+    #attentiontextwrapper h1 {
+        font-size: 1.7em;
+    }
+
+    #attentiontextwrapper h2 {
+        font-size: 1em;
+    }
+
     #lefthand{
         left: -150px;
         top: -158px;
@@ -303,6 +567,17 @@ header {
 }
 
 @media all and (min-width: 650px){
+    .mobilattentionstars img{
+        width: 24px;
+        height: 24px;
+    }
+    #attentiontextwrapper h1 {
+        font-size: 2em;
+    }
+
+    #attentiontextwrapper h2 {
+        font-size: 1.3em;
+    }
     #lefthand{
         left: -170px;
         top: -170px;
@@ -318,6 +593,32 @@ header {
 
 }
 @media all and (min-width: 769px) {
+    #attentiontextwrapper {
+
+        top:13%;
+    }
+    #attentiontextwrapper h1 {
+        font-size: 2.4em;
+    }
+
+    #attentiontextwrapper h2 {
+        font-size: 1.5em;
+    }
+    header{
+        height: 100px;
+    }
+    #attention{
+        margin-top: 100px;
+    }
+    #mobillogo{
+        display: none;
+    }
+    #desklogo {
+        display: block;
+    }
+    #logowrapper {
+        background: white;
+    }
     #lefthand{
         left: -190px;
         top: -190px;
@@ -336,6 +637,12 @@ header {
     #desknav {
         display: block;
     }
+    .mobilnav {
+        display: none;
+    }
+    .nav-toggle {
+        display: none;
+    }
     #desknav > li
     {
         width: 106px;
@@ -343,16 +650,23 @@ header {
 }
 
 @media all and (min-width: 960px) {
+    #attentiontextwrapper h1 {
+        font-size: 2.8em;
+    }
+
+    #attentiontextwrapper h2 {
+        font-size: 1.8em;
+    }
     #lefthand{
-        left: -230px;
-        top: -230px;
-        width: 230px;
+        left: -200px;
+        top: -200px;
+        width: 200px;
     }
 
     #righthand{
-        right: -230px;
-        top: -230px;
-        width: 230px;
+        right: -200px;
+        top: -200px;
+        width: 200px;
     }
     #desknav > li
     {
@@ -361,65 +675,70 @@ header {
 }
 
 @media all and (min-width: 1020px) {
+    #attentiontextwrapper h1 {
+        font-size: 3.2em;
+    }
+
+    #attentiontextwrapper h2 {
+        font-size: 2em;
+    }
     #lefthand{
         left: -280px;
         top: -280px;
-        width: 280px;
+        width: 230px;
     }
 
     #righthand{
         right: -280px;
         top: -280px;
-        width: 280px;
+        width: 230px;
     }
     #desknav > li
     {
         width: 150px;
     }
 }
+@media all and (min-width: 1200px) {
+    #lefthand{
+        left: -280px;
+        top: -280px;
+        width: 270px;
+    }
+
+    #righthand{
+        right: -280px;
+        top: -280px;
+        width: 270px;
+    }
+}
 
 @media all and (min-width: 1440px) {
+    #attentiontextwrapper h1 {
+        font-size: 4em;
+    }
+
+    #attentiontextwrapper h2 {
+        font-size: 2.5em;
+    }
+
     #lefthand{
         left: -380px;
         top: -380px;
-        width: 380px;
+        width: 350px;
     }
 
     #righthand{
         right: -370px;
         top: -370px;
-        width: 370px;
+        width: 340px;
     }
     #desknav > li
     {
-        width: 180px;
+        width: 170px;
     }
 
 }
 
 
-/* nav hover/active effects (URL: https://tympanus.net/codrops/2013/08/06/creative-link-effects/) */
-.cl-effect-4 a::after {
-    position: absolute;
-    top: 72%;
-    left: 15%;
-    width: 70%;
-    height: 1px;
-    background: #cc2a2a;
-    content: '';
-    opacity: 0;
-    -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
-    -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
-    transition: height 0.3s, opacity 0.3s, transform 0.3s;
-    -webkit-transform: translateY(-10px);
-    -moz-transform: translateY(-10px);
-    transform: translateY(-10px);
-}
-.cl-effect-4 a:hover::after,
-.cl-effect-4 a:active::after {
-    height: 4px;
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-    -moz-transform: translateY(0px);
-    transform: translateY(0px);
-}
+
+

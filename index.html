@@ -16,16 +16,29 @@
             <div id="logowrapper">
                 <a href="index.html">
                     <img src="img/logo.png" id="desklogo" alt="Flip the Burger Logo">
-                    <!--<img src="img/logomobil.png" id="mobillogo" alt="Flip the Burger Logo">-->
+                    <img src="img/logomobil.png" id="mobillogo" alt="Flip the Burger Logo">
                 </a>
             </div>
             <nav id="desknav" class="cl-effect-4">
-                <li><a href="#overflowxwrapper">Order</a></li>
-                <li><a href="#order">Menu</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#menu">Menu</a></li>
                 <li><a href="#location">Location</a></li>
                 <li><a href="#social">Social</a></li>
                 <li><a href="#gallery" style="padding-right: 0px;">Gallery</a></li>
-            </nav>
+            </nav><!-- desktop nav -->
+            <div class="nav-toggle"></div>
+            <nav class="mobilnav">
+                <div class="toggleclose"></div>
+                <div class="marginwrap">
+                    <ul class="burgerlist">
+                        <li><a href="#order">Order</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#location">Location</a></li>
+                        <li><a href="#social">Social</a></li>
+                        <li><a href="#gallery" style="padding-right: 0px;">Gallery</a></li>
+                    </ul>
+                </div>  
+            </nav> <!--mobil nav-->
         </div>
     </header>
 
@@ -35,12 +48,28 @@
         <div id="overflowxwrapper">
             <section id="attention">
                 <div id="mobilblackbox"></div>
+                <section id="attentiontextwrapper">
+                    <div class="attentionstarwrapper">
+                        <img src="img/attentionstar.png">
+                    </div>
+                    <h1 id="attentionh1">Flip the Burger</h1>
+                    <h2 id="attentionh2">A Different Kind of Art</h2>
+                    <div class="attentionstarwrapper">
+                        <img src="img/attentionstar.png">
+                    </div>
+                    <div class="mobilattentionstars">
+                        <img src="img/attentionstar.png">
+                        <img src="img/attentionstar.png">
+                        <img src="img/attentionstar.png">
+                    </div>
+                </section>
                 <img src="img/burgerattention.jpg" id="attentionbg">
                 <img src="img/lefthand.png" id="lefthand">
                 <img src="img/righthand.png" id="righthand">
             </section>
 
-            <section class="flipcontainer" id="order">
+            <section class="flipcontainer">
+                <div class="offsetanchor" id="order"></div>
                 <div id="card" class="flipped">
                     <section class="front">
                         <button class="orderbutton"></button>
@@ -50,17 +79,21 @@
                     </section>
                 </div>
             </section>
-            
+
             <section class="sectionplaceholder">
+                <div class="offsetanchor" id="menu"></div>
                 <h1>Menu</h1>
             </section>
             <section class="sectionplaceholder">
+                <div class="offsetanchor" id="location"></div>
                 <h1>Location</h1>
             </section>
             <section class="sectionplaceholder">
+                <div class="offsetanchor" id="social"></div>
                 <h1>Social Media</h1>
             </section>
             <section class="sectionplaceholder">
+                <div class="offsetanchor" id="gallery"></div>
                 <h1>Gallery</h1>
             </section>
 
