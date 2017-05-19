@@ -11,7 +11,7 @@ $(document).ready(function(){
             $('.mobilnav').toggleClass('open');
         });
     }); 
-    
+
     function isTablet() {
         if(window.innerWidth <= 856) {
             return true;
@@ -25,10 +25,14 @@ $(document).ready(function(){
     /* Flips the order section on its back which reveals the products that are available. Simple JQuery to control CSS classes*/
     $(function() {
         $('.orderbutton').on('click', function(){
-            $('#card').toggleClass('flipped');
+            $('#ordercard').toggleClass('flipped');
         });
     }); 
-
+    $(function() {
+        $('.locationbutton').on('click', function(){
+            $('#locationcard').toggleClass('flipped');
+        });
+    }); 
 
 
 

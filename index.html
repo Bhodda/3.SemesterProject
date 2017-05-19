@@ -70,32 +70,63 @@
 
             <section class="flipcontainer">
                 <div class="offsetanchor" id="order"></div>
-                <div id="card" class="flipped">
+                <div id="ordercard" class="flipped card">
                     <section class="front">
-                        <button class="orderbutton"></button>
+                        <button class="orderbutton flipbutton"></button>
                     </section>
                     <section class="back">
-                        <button class="orderbutton"></button>
+                        <button class="orderbutton flipbutton"></button>
                     </section>
                 </div>
             </section>
 
-            <section class="sectionplaceholder">
+            <section class="contentwrapper" id="menusection">
                 <div class="offsetanchor" id="menu"></div>
-                <h1>Menu</h1>
-            </section>
-            <section class="sectionplaceholder">
+                <img src="img/burger.png" id="menuburgerimg">
+                <section class="widthwrapper">
+                    <div class="sectiontextboxleft">
+                        <h2 class="module">Our Menu</h2>
+                        <p class="module">Our Menu here at Flip the Burger might not be the most diverse, but this allows us to put the care and effort into each and every burger to ensure you that you will always leave satisfied.<br> <span class="module">Our menu includes</span></p>
+                        <ul>
+                            <li class="module">The Burger - Classic grilled burger.</li>
+                            <li class="module">The Menu - The Burger, homemade fries and a soda.</li>
+                            <li class="module">The Snack Box - Mozerella sticks, chilli cheese and onion rings.</li>
+                            <li class="module">The Drinks - Soda, cocio, water or coffee.</li>
+                        </ul>
+                        <div class="module" id="menulink"><a href="menu.pdf">Click here to see the full menu</a></div>
+                    </div>
+                </section>
+            </section> <!-- Menu -->
+
+            <section class="flipcontainer">
                 <div class="offsetanchor" id="location"></div>
-                <h1>Location</h1>
-            </section>
+                <div id="locationcard" class="flipped card">
+                    <section class="front" id="mapsection">
+
+                        <div id="map"></div>
+                        <div id="locationtextbox">
+
+                            <button class="locationbutton flipbutton"></button>
+                        </div>
+
+                    </section>
+                    <section class="back">
+                        <button class="locationbutton flipbutton"></button>
+                    </section>
+                </div>
+            </section> <!-- Location -->
+
+
             <section class="sectionplaceholder">
                 <div class="offsetanchor" id="social"></div>
                 <h1>Social Media</h1>
-            </section>
+            </section> <!-- Social Media -->
+
+
             <section class="sectionplaceholder">
                 <div class="offsetanchor" id="gallery"></div>
                 <h1>Gallery</h1>
-            </section>
+            </section> <!-- Gallery -->
 
         </div>
     </body>
@@ -109,4 +140,8 @@
     </footer>
     <script src="js/script.js"></script>
     <script src="js/smoothscroll.js"></script>
+    <script src="js/map.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTNka5TklevgyBMCcF-8awi2HS3ZNbgKw&callback=initMap">
+    </script>
 </html>

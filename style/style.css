@@ -4,16 +4,19 @@
 }
 
 @font-face {
+    font-family: PorticoRough;
+    src: url(PorticoRough.otf); 
+}
+@font-face {
     font-family: PorticoLightRough;
-    src: url(PorticoOutline.otf); 
+    src: url(PorticoLightRough.otf); 
 }
 
 @font-face {
     font-family: PorticoOutline;
-    src: url(PorticoRough.otf); 
+    src: url(PorticoOutline.otf); 
 }
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+html, body, div, span, applet, object, iframe, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -41,7 +44,10 @@ body {
 }
 
 
-
+::selection {
+    background: #fca309;
+    color: #222
+}
 
 
 #overflowxwrapper {
@@ -49,11 +55,12 @@ body {
 }
 
 
+
 /* -- header -- */
 
 header {
     width: 100%;
-    background-color: #ffffff;
+    background-color: #f6f6f6;
     position: fixed;
     top: 0;
     z-index: 100;
@@ -80,6 +87,7 @@ header {
     height: 140px;
     border-radius: 1000px;
     float: left;
+    background: #f2f2f2;
     /*box-shadow: 0px 5px 100px #222;  FIX THIS YO */    
 }
 
@@ -88,10 +96,6 @@ header {
     margin-left: auto;
     margin-right: auto;
     padding: 0px 18px;
-}
-
-.widthwrapper {
-    max-width: 1160px;
 }
 
 /* -- Navigation -- */
@@ -210,19 +214,42 @@ header {
 
 /* -- main content -- */
 
+
+.contentwrapper {
+    width: 100%;
+    position: relative;
+    z-index: 5;
+    background: #fffaf4;
+
+
+
+}
+
+.widthwrapper {
+    max-width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
 .sectionplaceholder {
     height: 512px;
     width: 100%;
     position: relative;
-    z-index: 5;   
+    z-index: 4;   
     background: #c34242;
-    background-size: 200%;
 }
 .offsetanchor {
     display: block;
     position: relative;
     top: -140px;
     visibility: hidden;
+}
+
+.sectiontextboxleft {
+    width: 60%;
+
+    padding: 5% 3%;
 }
 
 
@@ -268,7 +295,7 @@ header {
 
 #attentiontextwrapper h1 {
     color: #fff;
-    font-family: PorticoOutline;
+    font-family: PorticoRough;
     text-align: center; 
     display:none;
 }
@@ -276,7 +303,7 @@ header {
 #attentiontextwrapper h2 {
     color: #fca309;
     text-align: center;
-    font-family: PorticoLightRough;
+    font-family: PorticoOutline;
     display: none;
 }
 
@@ -302,6 +329,91 @@ header {
     margin-right: 5px;
 }
 
+/* -- Menu -- */
+
+#menusection {
+    background: url(../img/blackconcretebg.jpg);
+    background-size:contain;
+    z-index: 6;
+}
+
+#menuburgerimg{
+    position: absolute;
+    right: -150px;
+    top: 15%;
+    height: 70%;
+    transition: ease-out 10s;
+}
+
+#menusection .sectiontextboxleft h2 {
+    font-family: PorticoOutline;
+    font-size: 3em;
+    color: white;
+    opacity: 0.9;
+}
+#menusection .sectiontextboxleft p {
+    font-family: PorticoRough.otf;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    color: white;
+    opacity: 0.9;
+    margin-top: 20px;
+}
+#menusection .sectiontextboxleft span {
+    line-height: 3.5em;
+
+    font-size: 1.15em;
+    font-family: PorticoRough;
+}
+#menusection .sectiontextboxleft a {
+    color: white;
+    font-family: PorticoRough;
+    text-decoration: none;
+    transition: all 0.2s;
+    padding-bottom: 3px;
+    border-bottom: 1px #fff solid;
+}
+#menusection .sectiontextboxleft a:hover, #menusection .sectiontextboxleft a:active {
+    color: #fca309;
+    border-bottom: 1px #fca309 solid;
+}
+
+#menusection .sectiontextboxleft ul {
+    list-style: none;
+    margin-left: 30px;
+    line-height: 1.5em;
+    margin-bottom: 45px;
+    margin-top: 10px;
+    list-style-image: url("../img/bulletstar.png");
+}
+#menusection .sectiontextboxleft ul li {
+    color:white;
+    font-size: 1.3em;
+    margin-bottom: 22px;
+}
+
+/* -- Location -- */
+
+#mapsection {
+    background: #f2f2f2;
+    position: relative;
+}
+#map {
+    height: 100%;
+    width: 65%;
+}
+#locationtextbox {
+    width: 35%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #f2f2f2;
+    box-shadow: -100px 0 500px #f2f2f2;
+}
+
+
+
 /* -- flippin -- (URL: https://desandro.github.io/3dtransforms/docs/card-flip.html) */
 .flipcontainer { 
     width: auto;
@@ -311,7 +423,7 @@ header {
 
 }
 
-#card {
+.card {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -320,7 +432,7 @@ header {
     box-shadow: 0px 5px 50px #000;
 }
 
-#card section {
+.card section {
     margin: 0;
     display: block;
     position: absolute;
@@ -329,30 +441,37 @@ header {
     backface-visibility: hidden;
 }
 
-.orderbutton {
+.flipbutton {
     width: 80px;
     height:50px;
 }
 
-#card .front {
-    background: red;
+.card .front {
+    position: absolute;
+    top: 0;
+    left: 0;
     transform: rotateY( 180deg );
 }
-#card .back {
+.card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
     background: blue;
 }
 
-#card { 
+.card { 
     transform-origin: right center; 
 }
 
-#card.flipped {
+.card.flipped {
     transform: translateX( -100% ) rotateY( -180deg );
 }
 
+/* -- Footer -- */
+
 footer {
     height: 400px;
-    
+
 }
 
 
@@ -382,10 +501,43 @@ footer {
     transform: translateY(0px);
 }
 
+/* styling for small animations when elements enter viewport look in smoothscroll.js for source and description*/
+
+.come-in {
+    transform: translateY(150px);
+    animation: come-in 0.8s ease forwards;
+}
+.come-in:nth-child(odd) {
+    animation-duration: 0.6s; /* So they look staggered */
+}
+
+@keyframes come-in {
+    to { transform: translateY(0); }
+}
+
 /* -- MediaQ -- */
 
 
 @media all and (min-width: 0px) {
+    .sectiontextboxleft {
+        font-size: 0.7em;
+    }
+    .sectiontextboxleft h2 {
+        text-align: center;
+    }
+    .sectiontextboxleft p {
+        text-align: center;
+    }
+    #menulink {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .sectiontextboxleft{
+        width: 94%;
+    }
+    #menuburgerimg {
+        display: none;
+    }
     .mobilattentionstars img{
         width: 5px;
         height: 5px;
@@ -444,6 +596,9 @@ footer {
 }
 
 @media all and (min-width: 200px) {
+    .sectiontextboxleft {
+        font-size: 0.8em;
+    }
     .mobilattentionstars img{
         width: 10px;
         height: 10px;
@@ -466,6 +621,9 @@ footer {
 }
 
 @media all and (min-width: 300px) {
+    .sectiontextboxleft {
+        font-size: 0.9em;
+    }
     .mobilattentionstars img{
         width: 14px;
         height: 14px;
@@ -503,6 +661,9 @@ footer {
 
 } 
 @media all and (min-width: 380px) {
+    .sectiontextboxleft {
+        font-size: 1em;
+    }
     #attentiontextwrapper h1 {
         font-size: 1.2em;
     }
@@ -567,6 +728,7 @@ footer {
 }
 
 @media all and (min-width: 650px){
+
     .mobilattentionstars img{
         width: 24px;
         height: 24px;
@@ -593,6 +755,26 @@ footer {
 
 }
 @media all and (min-width: 769px) {
+    .sectiontextboxleft h2 {
+        text-align: left;
+    }
+    .sectiontextboxleft p {
+        text-align: left;
+    }
+    #menulink {
+        text-align: left;
+    }
+    #menusection .sectiontextboxleft {
+        width: 94%;
+    }
+    #menuburgerimg {
+        display: block;
+        height: 60%;
+        top:54%;
+    }
+    .animateburger {
+        transform: translateX(-90px);
+    }
     #attentiontextwrapper {
 
         top:13%;
@@ -617,7 +799,7 @@ footer {
         display: block;
     }
     #logowrapper {
-        background: white;
+        background: #f6f6f6;
     }
     #lefthand{
         left: -190px;
@@ -650,6 +832,16 @@ footer {
 }
 
 @media all and (min-width: 960px) {
+    #menusection .sectiontextboxleft {
+        width: 60%;
+    }
+    #menuburgerimg {
+        height: 60%;
+        top:18%;
+    }
+    .animateburger {
+        transform: translateX(-70px);
+    }
     #attentiontextwrapper h1 {
         font-size: 2.8em;
     }
@@ -675,6 +867,9 @@ footer {
 }
 
 @media all and (min-width: 1020px) {
+    .animateburger {
+        transform: translateX(-100px);
+    }
     #attentiontextwrapper h1 {
         font-size: 3.2em;
     }
@@ -699,6 +894,13 @@ footer {
     }
 }
 @media all and (min-width: 1200px) {
+    #menuburgerimg{
+        top:15%;
+        height: 70%;
+    }
+    .animateburger {
+        transform: translateX(-130px);
+    }
     #lefthand{
         left: -280px;
         top: -280px;
@@ -713,6 +915,9 @@ footer {
 }
 
 @media all and (min-width: 1440px) {
+    .animateburger {
+        transform: translateX(-150px);
+    }
     #attentiontextwrapper h1 {
         font-size: 4em;
     }
