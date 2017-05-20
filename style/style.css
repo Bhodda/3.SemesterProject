@@ -221,8 +221,6 @@ header {
     z-index: 5;
     background: #fffaf4;
 
-
-
 }
 
 .widthwrapper {
@@ -251,6 +249,8 @@ header {
 
     padding: 5% 3%;
 }
+
+
 
 
 /* -- Attention -- */
@@ -337,6 +337,8 @@ header {
     z-index: 6;
 }
 
+
+
 #menuburgerimg{
     position: absolute;
     right: -150px;
@@ -359,7 +361,7 @@ header {
     opacity: 0.9;
     margin-top: 20px;
 }
-#menusection .sectiontextboxleft span {
+#menusection .sectiontextboxleft p span {
     line-height: 3.5em;
 
     font-size: 1.15em;
@@ -367,15 +369,6 @@ header {
 }
 #menusection .sectiontextboxleft a {
     color: white;
-    font-family: PorticoRough;
-    text-decoration: none;
-    transition: all 0.2s;
-    padding-bottom: 3px;
-    border-bottom: 1px #fff solid;
-}
-#menusection .sectiontextboxleft a:hover, #menusection .sectiontextboxleft a:active {
-    color: #fca309;
-    border-bottom: 1px #fca309 solid;
 }
 
 #menusection .sectiontextboxleft ul {
@@ -404,14 +397,30 @@ header {
 }
 #locationtextbox {
     width: 35%;
-    height: 100%;
+    height: 81.5%;
     position: absolute;
     top: 0;
     right: 0;
     background: #f2f2f2;
-    box-shadow: -100px 0 500px #f2f2f2;
+    box-shadow: -80px 0 100px #f2f2f2;
+    padding:3%;
+    text-align: center;
 }
 
+#locationtextbox h2{
+    font-family: PorticoRough;
+    color: #fca309;
+    font-size: 3em;
+    padding-top: 45px;
+}
+
+#locationtextbox ul {
+    list-style: none;
+    font-size: 1.3em;
+    line-height: 2em;
+    margin-bottom: 65px;
+    margin-top: 35px;
+}
 
 
 /* -- flippin -- (URL: https://desandro.github.io/3dtransforms/docs/card-flip.html) */
@@ -501,6 +510,71 @@ footer {
     transform: translateY(0px);
 }
 
+
+
+.cl-effect-20 a {
+    line-height: 3em;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    perspective: 800px;
+    font-size: 1.2em;
+}
+
+.cl-effect-20 a span {
+    position: relative;
+    display: inline-block;
+    padding: 3px 20px 0;
+    background: #fca309;
+    box-shadow: inset 0 3px #724c0b;
+    text-align: center;
+    -webkit-transition: background 0.6s;
+    -moz-transition: background 0.6s;
+    transition: background 0.6s;
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 0% 50%;
+    -moz-transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
+}
+
+.cl-effect-20 a span::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    color: #fca309;
+    content: attr(data-hover);
+    -webkit-transform: rotateX(270deg);
+    -moz-transform: rotateX(270deg);
+    transform: rotateX(270deg);
+    -webkit-transition: -webkit-transform 0.6s;
+    -moz-transition: -moz-transform 0.6s;
+    transition: transform 0.6s;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    transform-origin: 0 0;
+    pointer-events: none;
+}
+
+.cl-effect-20 a:hover span,
+.cl-effect-20 a:active span {
+    background: #9a6a19;
+    cursor: pointer;
+}
+
+.cl-effect-20 a:hover span::before,
+.cl-effect-20 a:active span::before {
+    -webkit-transform: rotateX(10deg);	
+    -moz-transform: rotateX(10deg);
+    transform: rotateX(10deg);
+}
+
 /* styling for small animations when elements enter viewport look in smoothscroll.js for source and description*/
 
 .come-in {
@@ -520,6 +594,15 @@ footer {
 
 @media all and (min-width: 0px) {
     .sectiontextboxleft {
+        text-align: center;
+    }
+    #menusection .sectiontextboxleft ul li {
+        text-align: left;
+    }
+    #menusection {
+        background-size:cover;
+    }
+    .sectiontextboxleft {
         font-size: 0.7em;
     }
     .sectiontextboxleft h2 {
@@ -530,6 +613,7 @@ footer {
     }
     #menulink {
         text-align: center;
+
         margin-bottom: 30px;
     }
     .sectiontextboxleft{
@@ -755,6 +839,22 @@ footer {
 
 }
 @media all and (min-width: 769px) {
+    .sectiontextboxleft {
+        text-align: left;
+    }
+    
+
+    #menusection::after{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: inherit;
+        z-index: -1;
+        bottom: 0;
+        transform-origin: left right;
+        transform: skewY(3deg);
+    }
     .sectiontextboxleft h2 {
         text-align: left;
     }
@@ -894,6 +994,9 @@ footer {
     }
 }
 @media all and (min-width: 1200px) {
+    #menusection {
+        background-size:contain;
+    }
     #menuburgerimg{
         top:15%;
         height: 70%;
