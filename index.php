@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Flip the Burger</title>
         <link rel="stylesheet" href="style/style.css">
+        <?php require 'includes/connect.php' ?>
 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
@@ -75,7 +76,10 @@
                         <button class="orderbutton flipbutton"></button>
                     </section>
                     <section class="back">
-                        <button class="orderbutton flipbutton"></button>
+
+
+
+                       
                     </section>
                 </div>
             </section>
@@ -137,7 +141,7 @@
             <section class="sectionplaceholder">
                 <div class="offsetanchor" id="social"></div>
                 <h1>Social Media</h1>
-
+                <button class="orderbutton flipbutton"></button>
             </section> <!-- Social Media -->
 
 
@@ -159,7 +163,6 @@
     <script src="js/script.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/map.js"></script>
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTNka5TklevgyBMCcF-8awi2HS3ZNbgKw&callback=initMap">
-    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTNka5TklevgyBMCcF-8awi2HS3ZNbgKw&callback=initMap"></script>
+    <script src="js/common.js"></script>
 </html>
