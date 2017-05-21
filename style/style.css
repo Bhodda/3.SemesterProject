@@ -1,21 +1,23 @@
 @font-face {
     font-family: Circularfont;
-    src: url(CircularStd-Book.otf); 
+    src: url(CircularStd-Book.otf);
 }
 
 @font-face {
     font-family: PorticoRough;
-    src: url(PorticoRough.otf); 
+    src: url(PorticoRough.otf);
 }
+
 @font-face {
     font-family: PorticoLightRough;
-    src: url(PorticoLightRough.otf); 
+    src: url(PorticoLightRough.otf);
 }
 
 @font-face {
     font-family: PorticoOutline;
-    src: url(PorticoOutline.otf); 
+    src: url(PorticoOutline.otf);
 }
+
 html, body, div, span, applet, object, iframe, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -27,7 +29,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video, a {
+time, mark, audio, video, a, textarea  {
     font-family: Circularfont;
 }
 
@@ -43,17 +45,18 @@ body {
     background-attachment: fixed;
 }
 
-
 ::selection {
     background: #fca309;
     color: #222
 }
 
-
 #overflowxwrapper {
     overflow-x: hidden;
 }
 
+.alignbottom {
+    vertical-align: bottom;
+}
 
 
 /* -- header -- */
@@ -65,30 +68,30 @@ header {
     top: 0;
     z-index: 100;
     padding: 0px 10px;
-
     box-shadow: 0px 5px 50px #222;
 }
+
 #desklogo {
     height: 110px;
     margin-top: 10px;
     z-index: 10;
 }
-#mobillogo{
-    height: 66px;
-    margin-top: 7px;
-    margin-left: -18px;
+
+#mobillogo {
+    height: 48px;
+    margin-top: 6px;
+    margin-left: -14px;
 }
 
-#desklogo:hover, #desklogo:active {
+#desklogo:hover,
+#desklogo:active {}
 
-}
 #logowrapper {
-    width: 178px;
-    height: 140px;
-    border-radius: 1000px;
+
+
     float: left;
     background: #f2f2f2;
-    /*box-shadow: 0px 5px 100px #222;  FIX THIS YO */    
+    /*box-shadow: 0px 5px 100px #222;  FIX THIS YO */
 }
 
 .widthwrapperheader {
@@ -98,10 +101,13 @@ header {
     padding: 0px 18px;
 }
 
+
 /* -- Navigation -- */
+
+
 /* -- desktop --*/
-#desknav
-{
+
+#desknav {
     list-style: none;
     padding: 0;
     float: right;
@@ -109,16 +115,14 @@ header {
     text-align: center;
 }
 
-#desknav > li
-{
+#desknav>li {
     position: relative;
     float: left;
     height: 100%;
     margin: 0;
 }
 
-#desknav a
-{
+#desknav a {
     color: #222;
     text-decoration: none;
     display: block;
@@ -126,15 +130,15 @@ header {
     line-height: 100px;
     font-size: 1.2em;
     font-weight: 400;
-
     transition: all 0.2s;
     -o-transition: all 0.2s;
     -ms-transition: all 0.2s;
     -moz-transition: all 0.2s;
     -webkit-transition: all 0.2s;
 }
-/* -- mobil nav -- */
 
+
+/* -- mobil nav -- */
 
 .mobilnav {
     position: fixed;
@@ -142,35 +146,65 @@ header {
     right: 0;
     width: 100%;
     height: 120%;
-    background-color:#fffbf4;
+    background-color: #fffbf4;
     text-align: center;
     transform: translateX(100%);
-    transition: transform 0.7s ease;
+    transition: transform 0.7s ease-in-out;
     border-left: 3px solid #fca309;
     z-index: 10000;
 }
+
 .mobilnav.open {
     transform: translateX(0);
 }
-.mobilnav li{
+
+
+#check-out-wrapper.open {
+    transform: translateX(0);
+}
+
+.show-basket {
+    float: right;
+    cursor: pointer;
+    width: 50px; 
+    height: 50px;
+    margin-top: 5px;
+    margin-right: 15px;
+    background: url(../img/icon/basket.png) center;
+}
+
+.close-basket {
+    position: absolute;
+    left:0;
+    top:17px;
+    cursor: pointer;
+    width: 25px; 
+    height: 25px;
+    background: url(../img/icon/return.png) center;
+}
+
+.mobilnav li {
     list-style: none;
     line-height: 1.5em;
 }
-.mobilnav ul a{
+
+.mobilnav ul a {
     text-decoration: none;
     padding: 25px 20px;
-    display:block;
+    display: block;
     color: #fca309;
     font-size: 1.3em;
     max-width: 60%;
     margin-left: auto;
     margin-right: auto;
 }
-.mobilnav ul a:active{
+
+.mobilnav ul a:active {
     color: #fca309;
     font-weight: bold;
 }
-.mobilnav ul a:hover{
+
+.mobilnav ul a:hover {
     color: #fca309;
     font-weight: bold;
 }
@@ -179,48 +213,50 @@ header {
     padding-top: 5%;
 }
 
-.nav-toggle{
+.nav-toggle {
     float: right;
     cursor: pointer;
-    width: 70px;
-    height: 70px;
+    width: 50px; 
+    height: 50px;
     margin-top: 5px;
-    background: url(../img/icon/burger2.png);
+    margin-right: 5px;
+    background: url(../img/icon/burger2.png) center;
 }
 
 .nav-toggle:hover {
-    background: url(../img/icon/burger2hover.png);
+    background: url(../img/icon/burger2hover.png) center;
 }
+
 .nav-toggle:active {
-    background: url(../img/icon/burger2hover.png);
+    background: url(../img/icon/burger2hover.png) center;
 }
 
-
-.toggleclose{
+.toggleclose {
     float: right;
     cursor: pointer;
-    height: 60px;
-    width: 60px;
-    background: url(../img/icon/burgerclose.png);
+    width: 50px; 
+    height: 50px;
+    margin-top: 5px;
+    background: url(../img/icon/burgerclose.png) center;
     display: inline-block;
 }
 
-.toggleclose:hover{
-    background: url(../img/icon/burgerclosehover.png);
+.toggleclose:hover {
+    background: url(../img/icon/burgerclosehover.png) center;
 }
-.toggleclose:active{
-    background: url(../img/icon/burgerclosehover.png);
+
+.toggleclose:active {
+    background: url(../img/icon/burgerclosehover.png) center;
 }
+
 
 /* -- main content -- */
-
 
 .contentwrapper {
     width: 100%;
     position: relative;
     z-index: 5;
     background: #fffaf4;
-
 }
 
 .widthwrapper {
@@ -234,9 +270,10 @@ header {
     height: 512px;
     width: 100%;
     position: relative;
-    z-index: 4;   
+    z-index: 4;
     background: #c34242;
 }
+
 .offsetanchor {
     display: block;
     position: relative;
@@ -246,11 +283,8 @@ header {
 
 .sectiontextboxleft {
     width: 60%;
-
     padding: 5% 3%;
 }
-
-
 
 
 /* -- Attention -- */
@@ -261,19 +295,19 @@ header {
     box-shadow: 0px 5px 50px #000;
 }
 
-#attentionbg{
+#attentionbg {
     width: 100%;
     height: auto;
-    vertical-align:top;
+    vertical-align: top;
 }
 
-#lefthand{
+#lefthand {
     position: absolute;
     z-index: 2;
     transition: ease-in-out 3.5s;
 }
 
-#righthand{
+#righthand {
     position: absolute;
     z-index: 2;
     transition: ease-in-out 3.8s;
@@ -296,8 +330,8 @@ header {
 #attentiontextwrapper h1 {
     color: #fff;
     font-family: PorticoRough;
-    text-align: center; 
-    display:none;
+    text-align: center;
+    display: none;
 }
 
 #attentiontextwrapper h2 {
@@ -307,81 +341,213 @@ header {
     display: none;
 }
 
-.attentionstarwrapper{
+.attentionstarwrapper {
     text-align: center;
     display: none;
 }
+
 .attentionstarwrapper img {
     padding: 5px;
     padding-top: 10px;
     margin-left: 20px;
     margin-right: 20px;
 }
+
 .mobilattentionstars {
     text-align: center;
     display: none;
 }
-.mobilattentionstars img{
+
+.mobilattentionstars img {
     width: 20px;
     height: 20px;
     margin-top: 10px;
     margin-left: 5px;
     margin-right: 5px;
 }
+/* -- Order .front -- */
 
-/* -- Order -- */
+#order-left {
+    width: 40%;
+    height: 100%;
+    padding-top: 100px;
+    background: #f2ba70;
+    background: -webkit-linear-gradient(60deg, #ffb73a , #f2ba70 , #efc885 , #ffce78);
+    background: -o-linear-gradient(60deg, #ffb73a , #f2ba70 , #efc885 , #ffce78);
+    background: -moz-linear-gradient(60deg, #ffb73a , #f2ba70 , #efc885 , #ffce78);
+    background: linear-gradient(60deg, #ffb73a , #f2ba70 , #efc885 , #ffce78);
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
 
+#order-right {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: #FFF;
+    z-index: 6;
+    padding-top: 130px;
 
-#order-page {
-    margin-top: 1%;
+}
+
+#order-right h2 {
+    text-align: center;
+    font-family: PorticoOutline;
+    font-size: 2.1em;
+    color: #222;
+    opacity: 0.9;
+    padding: 0 5%;
+}
+
+#order-right p {
+    text-align: center;
+    font-family: Circularfont;
+    font-size: 1.15em;
+    line-height: 1.5em;
+    color: #000;
+    margin: 5% 10%;
+}
+
+#order-left h2 {
+    margin-bottom: 50px;
+    font-family: PorticoRough;
+    font-size: 2.1em;
+    color: #fff;
+    opacity: 0.9;
+    padding: 0 10px;
+}
+
+#order-form {
+    width: 75%;
+    margin: auto;
+    margin-bottom: 65px;
+    max-width: 350px;
+}
+
+.input-container {
+    border: 1px solid #A16806;
+    border-radius: 3px;
+    position: relative;
+    margin-bottom: 15px;
+    overflow: hidden;
+    background: transparent;
+}
+
+label, input {
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1em;
+    border: none;
+    font: inherit;
+}
+
+label {
+    display: inline-block;
+    font-size: .7em;
+    background: rgba(252, 163, 9, 0.5);
+    color: #724c0b;
+    opacity: 0.9;
+    line-height: 1.75em;
+    border-right: 1px solid #A16806;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+input {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 50px;
+    background: #f6f6f6;
+    color: #393939;
+}
+
+#order-right span {
+    font-family: PorticoRough;
+    font-size: 1.3em;
+    color:#fca309;
+    margin-left: 5px;
+}
+
+.orderfrontflip {
+
+}
+
+/* -- Order .back -- */
+#orderside {
+    background: #fff1df;
+    background: -webkit-linear-gradient(45deg, #fff1df , #ffd7a3 , #fff1df  , #ffd7a3);
+    background: -o-linear-gradient(45deg, #fff1df , #ffd7a3 , #fff1df  , #ffd7a3);
+    background: -moz-linear-gradient(45deg, #fff1df , #ffd7a3 , #fff1df  , #ffd7a3);
+    background: linear-gradient(45deg, #fff1df , #ffd7a3 , #fff1df  , #ffd7a3);
+    padding-top: 23px;
 }
 #menu-wrapper {
     width: 60%;
-    min-height: 200px;
     background-color: #FCFCFC;
     float: left;
-    margin-right: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
 }
-#burger-wrapper {	
+
+#burger-wrapper {
     margin: 16px 24px;
     line-height: 30px;
 }
+
 .menu-title {
     margin-top: 16px;
     width: 100%;
 }
+
 .menu-title h3 {
     padding-top: 14px;
     border-top: 1px solid #FFCA83;
 }
+
 .bottom-border {
     width: 100%;
     border-bottom: 1px solid #E1E3E3;
 }
+
 .menu-description {
     width: 100%;
     margin-top: 6px;
 }
+
 .menu-description p {
+    margin-bottom: 25px;
+    font-size: 0.85em;
+    font-style: italic;
 }
+
 .menu-entry {
     margin-top: 14px;
     min-height: 36px;
     font-size: 14px;
 }
+
 .product-name {
-    width: 70%;
+    width: 45%;
     float: left;
 }
+
 .product-price {
-    width: 20%;
+    width: 45%;
     float: left;
     text-align: right;
 }
+
 .add-product {
     width: 10%;
     float: left;
 }
+
 .add-btn {
     height: 30px;
     width: 30px;
@@ -394,47 +560,62 @@ header {
     border: none;
     margin-left: 30%;
 }
-button {
-    padding: 0;
-}
+
 .add-btn:hover {
     background: #ebdb8a;
     text-decoration: none;
+    cursor: pointer;
 }
-p {
-    margin: 0;
-}
+
 .product-title {
     font-weight: bold;
 }
+
 .product-price {
     font-weight: bold;
+}
+#check-out {
+    overflow-y: scroll;
+    backface-visibility: hidden;
+    background: url("../img/logowatermark.png") center no-repeat;
+    padding-right: 5px;
+
+}
+
+#check-out-confirm {
+    position: relative;
 }
 
 #check-out-wrapper {
     width: 35%;
-    min-height: 200px;
     background-color: #FCFCFC;
     font-size: 14px;
     float: left;
+    backface-visibility: hidden;
+
 }
+
 .check-out {
     margin: 16px 24px;
     line-height: 28px;
 }
+
 .selected-product {
     margin: 5px 0;
     min-height: 28px;
+    transition: all 1s;
 }
+
 .selected-product.animated {
     animation-duration: 0.5s;
     animation-fill-mode: both;
-
 }
+
 .remove-product {
     width: 10%;
     float: left;
 }
+
 .remove-btn {
     height: 26px;
     width: 26px;
@@ -444,74 +625,97 @@ p {
     background: #fca309;
     text-decoration: none;
     border: none;
-    padding: 0;
+    padding-bottom: 4px;
     text-align: center;
 }
+
 .remove-btn:hover {
     background: #ebdb8a;
     text-decoration: none;
+    cursor: pointer;
 }
+
 .selected-prod-name {
     width: 60%;
     float: left;
 }
+
 .selected-prod-price {
     width: 30%;
     float: left;
     text-align: right;
 }
+
 .selected-prod-title {
     margin-left: 10px;
 }
+
 #product-cost {
     margin: 16px 0;
     min-height: 28px;
 }
+
 .cost-wrap {
     min-height: 28px;
 }
+
 .cost-title {
     width: 60%;
     float: left;
 }
+
 .cost-price {
     width: 40%;
     float: right;
     text-align: right;
 }
+
 #check-out-msg {
     min-height: 28px;
 }
+
 #message-area {
     resize: none;
     width: 100%;
     min-height: 40px;
-    padding: 0;
+    padding: 1%;
     border-color: #FFCA83;
     background-color: #FFF6EA;
+
 }
-#check-out-confirm {
-    min-height: 28px;	
+#message-area:focus {
+    outline-color: #d0892c;
 }
+
 .confirm-btn {
-    border-radius: 48px;
     font-family: Circularfont;
-    color: #393939;
-    font-size: 20px;
+    color: #fff;
+    font-size: 13px;
     background: #fca309;
     padding: 5px 10px;
     border: solid #E8911A 1px;
     text-decoration: none;
     text-align: center;
-    width: 60%;
-    margin-left: 20%;
-    margin-top: 16px;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 11px;
+
 }
 
 .confirm-btn:hover {
     background: #FFCA83;
-    text-decoration: none;
+    cursor: pointer;
 }
+
+
+.goback-btn {
+
+}
+
+.goback-btn:hover {
+
+}
+
 
 .price-style {
     border: none;
@@ -520,13 +724,13 @@ p {
     margin: 0;
     background-color: transparent;
     font-size: 14px;
-    width: 40%;
     float: right;
     text-align: right;
     font-family: Circularfont;
     line-height: 28px;
     height: 28px;
 }
+
 .prod-style {
     border: none;
     resize: none;
@@ -540,12 +744,13 @@ p {
     line-height: 28px;
     height: 28px;
 }
+
 .line {
     background-color: #FFCA83;
     color: #FFCA83;
     height: 1px;
     border: 0 none;
-    margin-top: 16px;
+    margin-top: 12px;
 }
 
 
@@ -553,13 +758,11 @@ p {
 
 #menusection {
     background: url(../img/blackconcretebg.jpg);
-    background-size:contain;
+    background-size: contain;
     z-index: 6;
 }
 
-
-
-#menuburgerimg{
+#menuburgerimg {
     position: absolute;
     right: -150px;
     top: 15%;
@@ -573,6 +776,7 @@ p {
     color: white;
     opacity: 0.9;
 }
+
 #menusection .sectiontextboxleft p {
     font-family: PorticoRough.otf;
     font-size: 1.1em;
@@ -581,12 +785,13 @@ p {
     opacity: 0.9;
     margin-top: 20px;
 }
+
 #menusection .sectiontextboxleft p span {
     line-height: 3.5em;
-
     font-size: 1.15em;
     font-family: PorticoRough;
 }
+
 #menusection .sectiontextboxleft a {
     color: white;
 }
@@ -599,39 +804,41 @@ p {
     margin-top: 10px;
     list-style-image: url("../img/bulletstar.png");
 }
+
 #menusection .sectiontextboxleft ul li {
-    color:white;
+    color: white;
     font-size: 1.3em;
     margin-bottom: 22px;
 }
+
 
 /* -- Location -- */
 
 #mapsection {
     background: #f2f2f2;
     position: relative;
+    overflow-y: hidden;
 }
-#map {
-    height: 100%;
-    width: 65%;
-}
+
+
+
 #locationtextbox {
-    width: 35%;
-    height: 81.5%;
+    width: 40%;
+    height: 120%;
     position: absolute;
-    top: 0;
+    top: -10%;
     right: 0;
     background: #f2f2f2;
-    box-shadow: -80px 0 100px #f2f2f2;
-    padding:3%;
+    box-shadow: -40px 0 50px #f2f2f2;
+    padding: 3%;
     text-align: center;
 }
 
-#locationtextbox h2{
+#locationtextbox h2 {
     font-family: PorticoRough;
     color: #fca309;
     font-size: 3em;
-    padding-top: 45px;
+    padding-top: 90px;
 }
 
 #locationtextbox ul {
@@ -644,12 +851,12 @@ p {
 
 
 /* -- flippin -- (URL: https://desandro.github.io/3dtransforms/docs/card-flip.html) */
-.flipcontainer { 
+
+.flipcontainer {
     width: auto;
     height: 512px;
     position: relative;
     perspective: 1200px;
-
 }
 
 .card {
@@ -669,42 +876,73 @@ p {
     height: 100%;
     backface-visibility: hidden;
 }
+.closeflipbutton {
+    backface-visibility: hidden;
+    position: relative;
+    float: left;
+    top: -13px;
+    left: -13px;
+    height: 26px;
+    width: 26px;
+    border-radius: 48px;
+    color: #ffffff;
+    font-size: 20px;
+    background: #fca309;
+    text-decoration: none;
+    border: none;
+    padding-bottom: 4px;
+    text-align: center;
+    transform: scale(1.2);
+    z-index: 7;
+}
+.closeflipbutton:hover, .closeflipbutton:active {
+    background: #ebdb8a;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 .flipbutton {
     width: 80px;
-    height:50px;
+    height: 50px;
 }
 
 .card .front {
     position: absolute;
     top: 0;
     left: 0;
-    transform: rotateY( 180deg );
+    transform: rotateY( 180deg);
+    background: white;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    z-index: 5;
 }
+
 .card .back {
     position: absolute;
     top: 0;
     left: 0;
-    background: blue;
+    overflow-x: hidden;
+    z-index: 5;
 }
 
-.card { 
-    transform-origin: right center; 
+.card {
+    transform-origin: right center;
 }
 
 .card.flipped {
-    transform: translateX( -100% ) rotateY( -180deg );
+    transform: translateX( -100%) rotateY( -180deg);
 }
+
 
 /* -- Footer -- */
 
 footer {
     height: 400px;
-
 }
 
 
 /* nav hover/active effects (URL: https://tympanus.net/codrops/2013/08/06/creative-link-effects/) */
+
 .cl-effect-4 a::after {
     position: absolute;
     top: 72%;
@@ -721,6 +959,7 @@ footer {
     -moz-transform: translateY(-10px);
     transform: translateY(-10px);
 }
+
 .cl-effect-4 a:hover::after,
 .cl-effect-4 a:active::after {
     height: 4px;
@@ -729,8 +968,6 @@ footer {
     -moz-transform: translateY(0px);
     transform: translateY(0px);
 }
-
-
 
 .cl-effect-20 a {
     line-height: 3em;
@@ -741,9 +978,10 @@ footer {
 }
 
 .cl-effect-20 a span {
+    color: #fff;
     position: relative;
     display: inline-block;
-    padding: 3px 20px 0;
+    padding: 2px 20px 0;
     background: #fca309;
     box-shadow: inset 0 3px #724c0b;
     text-align: center;
@@ -790,10 +1028,12 @@ footer {
 
 .cl-effect-20 a:hover span::before,
 .cl-effect-20 a:active span::before {
-    -webkit-transform: rotateX(10deg);	
+    -webkit-transform: rotateX(10deg);
     -moz-transform: rotateX(10deg);
     transform: rotateX(10deg);
 }
+
+
 
 /* styling for small animations when elements enter viewport look in smoothscroll.js for source and description*/
 
@@ -801,20 +1041,123 @@ footer {
     transform: translateY(150px);
     animation: come-in 0.8s ease forwards;
 }
+
 .come-in:nth-child(odd) {
-    animation-duration: 0.6s; /* So they look staggered */
+    animation-duration: 0.6s;
+    /* So they look staggered */
 }
 
 @keyframes come-in {
-    to { transform: translateY(0); }
+    to {
+        transform: translateY(0);
+    }
 }
 
+/* styling for scrollbars url(http://codepen.io/devstreak/pen/dMYgeO) */
 
+#check-out::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+#check-out::-webkit-scrollbar
+{
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+#check-out::-webkit-scrollbar-thumb
+{
+    background-color: #fca309;
+}
 
 /* -- MediaQ -- */
 
-
 @media all and (min-width: 0px) {
+    #order-form {
+        margin-bottom: 15px;
+        width: 50%;
+        min-width: 210px;
+    }
+    .input-container {
+        margin-bottom: 5px;
+    }
+    #order-left h2 {
+        margin-bottom: 10px;
+    }
+    #order-right {
+        width: 100%;
+        height: 44%;
+        padding-top: 40px;
+        font-size: 0.7em;
+        position: relative;
+    }
+    #order-left {
+        width: 100%;
+        height: 48%;
+        padding-top: 35px;
+    }
+
+    #locationtextboxmobil {
+        display: block;
+        text-align: center;
+        padding: 3%;
+        background: #f2f2f2;
+    }
+    #locationtextboxmobil ul {
+        list-style: none;
+        font-size: 1.1em;
+        line-height: 1.8em;
+        margin-bottom: 10px;
+    }
+    #locationtextboxmobil h2 {
+        font-family: PorticoRough;
+        color: #fca309;
+        font-size: 1.5em;
+        padding-top: 10px;
+        padding-bottom: 15px;
+    }
+    #locationtextboxmobil span{
+        font-size: 0.8em;
+        line-height: 2.5em;
+    }
+
+    #map {
+        height: 45%;
+        width: 100%;
+    }
+    #locationtextbox {
+        display: none;
+    }
+    #check-out-wrapper {
+        width: 96%;
+        font-size: 14px;
+        margin: 2%;
+        margin-top: 5%;
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translateX(110%);
+        transition: transform 0.7s ease;
+        z-index: 6;
+
+        display: none;
+        height: 94%;
+    }
+    #check-out {
+        height: 270px;
+    }
+    #orderside {
+        padding-top: 33px;
+    }
+    #menu-wrapper {
+        width: 96%;
+    }
+    #attention {
+        display: none;
+    }
     .sectiontextboxleft {
         text-align: center;
     }
@@ -822,7 +1165,7 @@ footer {
         text-align: left;
     }
     #menusection {
-        background-size:cover;
+        background-size: cover;
     }
     .sectiontextboxleft {
         font-size: 0.7em;
@@ -835,16 +1178,15 @@ footer {
     }
     #menulink {
         text-align: center;
-
         margin-bottom: 30px;
     }
-    .sectiontextboxleft{
+    .sectiontextboxleft {
         width: 94%;
     }
     #menuburgerimg {
         display: none;
     }
-    .mobilattentionstars img{
+    .mobilattentionstars img {
         width: 5px;
         height: 5px;
     }
@@ -858,36 +1200,38 @@ footer {
         width: 90%;
         margin-left: 5%;
         margin-right: 5%;
-        top:25%;
+        top: 25%;
     }
-
     #attentiontextwrapper h1 {
         font-size: 1em;
     }
-
     #attentiontextwrapper h2 {
         font-size: 0.6em;
     }
-    header{
-        height: 80px;
+    header {
+        height: 60px;
     }
-    #attention{
-        margin-top: 80px;
+    #attention {
+        margin-top: 60px;
     }
-    #mobillogo{
+    #ordersection {
+        margin-top: 60px;
+    }
+    #mobillogo {
         display: block;
     }
     #desklogo {
         display: none;
     }
     #logowrapper {
+        width: auto;
+        height: auto;
         background: none;
     }
-    #lefthand{
+    #lefthand {
         display: none;
     }
-
-    #righthand{
+    #righthand {
         display: none;
     }
     #mobilblackbox {
@@ -902,35 +1246,47 @@ footer {
 }
 
 @media all and (min-width: 200px) {
+    #ordersection {
+        height: 625px;
+    }
     .sectiontextboxleft {
         font-size: 0.8em;
     }
-    .mobilattentionstars img{
+    .mobilattentionstars img {
         width: 10px;
         height: 10px;
     }
     #attentiontextwrapper {
-
         width: 90%;
         margin-left: 5%;
         margin-right: 5%;
-        top:22%;
+        top: 22%;
     }
-
     #attentiontextwrapper h1 {
         font-size: 1.2em;
     }
-
     #attentiontextwrapper h2 {
         font-size: 0.7em;
     }
 }
 
 @media all and (min-width: 300px) {
+    #check-out-wrapper {
+        height: 92%;
+    }
+    #check-out {
+        height: 260px;
+    }
+    #order-right {
+        font-size: 0.8em;
+    }
+    #ordersection {
+        height: 615px;
+    }
     .sectiontextboxleft {
         font-size: 0.9em;
     }
-    .mobilattentionstars img{
+    .mobilattentionstars img {
         width: 14px;
         height: 14px;
     }
@@ -938,23 +1294,21 @@ footer {
         width: 46%;
         margin-left: 27%;
         margin-right: 27%;
-        top:20%;
+        top: 20%;
     }
     #attentiontextwrapper h1 {
         font-size: 0.9em;
     }
-
     #attentiontextwrapper h2 {
         font-size: 0.6em;
     }
-    #lefthand{
+    #lefthand {
         display: block;
         left: -80px;
         top: -80px;
         width: 80px;
     }
-
-    #righthand{
+    #righthand {
         display: block;
         right: -70px;
         top: -70px;
@@ -964,27 +1318,33 @@ footer {
         height: 25px;
         background: black;
     }
+}
 
-} 
 @media all and (min-width: 380px) {
+    #check-out-wrapper {
+        height: 94%;
+    }
+    #check-out {
+        height: 230px;
+    }
+    #ordersection {
+        height: 580px;
+    }
     .sectiontextboxleft {
         font-size: 1em;
     }
     #attentiontextwrapper h1 {
         font-size: 1.2em;
     }
-
     #attentiontextwrapper h2 {
         font-size: 0.75em;
     }
-    #lefthand{
-
+    #lefthand {
         left: -100px;
         top: -100px;
         width: 100px;
     }
-
-    #righthand{
+    #righthand {
         right: -90px;
         top: -90px;
         width: 90px;
@@ -993,74 +1353,144 @@ footer {
         height: 15px;
         background: black;
     }
+}
 
-} 
-
-@media all and (min-width: 450px){
-    .mobilattentionstars img{
+@media all and (min-width: 450px) {
+    #check-out-wrapper {
+        height: 90%;
+    }
+    #check-out {
+        height: 168px;
+    }
+    #ordersection {
+        height: 540px;
+    }
+    .mobilattentionstars img {
         width: 18px;
         height: 18px;
     }
     #attentiontextwrapper h1 {
         font-size: 1.4em;
     }
-
     #attentiontextwrapper h2 {
         font-size: 0.9em;
     }
+
 }
 
-@media all and (min-width: 550px){
+@media all and (min-width: 550px) {
+    #map {
+        height: 100%;
+        width: 60%;
+        margin-left: -5%;
+
+    }
+    #locationtextbox {
+        display: block;
+    }
+    #locationtextboxmobil {
+        display: none;
+    }
     #attentiontextwrapper h1 {
         font-size: 1.7em;
     }
-
     #attentiontextwrapper h2 {
         font-size: 1em;
     }
-
-    #lefthand{
+    #lefthand {
         left: -150px;
         top: -158px;
         width: 150px;
     }
-
-    #righthand{
+    #righthand {
         right: -130px;
         top: -130px;
         width: 130px;
     }
-
 }
 
-@media all and (min-width: 650px){
-
-    .mobilattentionstars img{
+@media all and (min-width: 650px) {
+    #check-out {
+        height: 159px;
+    }
+    #order-form {
+        margin-bottom: 65px;
+        width: 75%;
+    }
+    .input-container {
+        margin-bottom: 15px;
+    }
+    #order-left h2 {
+        margin-bottom: 50px;
+    }
+    #order-left {
+        width: 40%;
+        height: 100%;
+        padding-top: 100px;
+    }
+    #order-right {
+        width: 60%;
+        height: 100%;
+        padding-top: 130px;
+        font-size: 1em;
+        position: absolute;
+    }
+    .close-basket {
+        display: none;
+    }
+    .show-basket {
+        display: none;
+    }
+    #ordersection {
+        height: 530px;
+    }
+    #orderside {
+        padding-top: 23px;
+    }
+    #menu-wrapper {
+        width: 59%;
+    }
+    #check-out-wrapper {
+        width: 36%;
+        font-size: 13px;
+        margin: 0;
+        position: relative;
+        z-index: 6;
+        display: block;
+        transform: translateX(0);
+    }
+    #attention {
+        display: block;
+    }
+    #ordersection {
+        margin-top: 0;
+    }
+    .mobilattentionstars img {
         width: 24px;
         height: 24px;
     }
     #attentiontextwrapper h1 {
         font-size: 2em;
     }
-
     #attentiontextwrapper h2 {
         font-size: 1.3em;
     }
-    #lefthand{
+    #lefthand {
         left: -170px;
         top: -170px;
         width: 170px;
     }
-
-    #righthand{
+    #righthand {
         right: -160px;
         top: -160px;
         width: 160px;
     }
-
-
 }
+
 @media all and (min-width: 769px) {
+    #ordersection {
+        height: 512px;
+    }
     .sectiontextboxleft {
         text-align: left;
     }
@@ -1079,49 +1509,49 @@ footer {
     #menuburgerimg {
         display: block;
         height: 60%;
-        top:54%;
+        top: 52%;
     }
     .animateburger {
         transform: translateX(-90px);
     }
     #attentiontextwrapper {
-
-        top:13%;
+        top: 13%;
     }
     #attentiontextwrapper h1 {
         font-size: 2.4em;
     }
-
     #attentiontextwrapper h2 {
         font-size: 1.5em;
     }
-    header{
+    header {
         height: 100px;
     }
-    #attention{
+    #attention {
         margin-top: 100px;
     }
-    #mobillogo{
+    #mobillogo {
         display: none;
     }
     #desklogo {
         display: block;
     }
     #logowrapper {
+        width: 178px;
+        height: 140px;
+        display: block;
         background: #f6f6f6;
+        border-radius: 1000px;
     }
-    #lefthand{
+    #lefthand {
         left: -190px;
         top: -190px;
         width: 190px;
     }
-
-    #righthand{
+    #righthand {
         right: -180px;
         top: -180px;
         width: 180px;
     }
-
     #mobilblackbox {
         display: none;
     }
@@ -1134,8 +1564,7 @@ footer {
     .nav-toggle {
         display: none;
     }
-    #desknav > li
-    {
+    #desknav>li {
         width: 106px;
     }
 }
@@ -1146,7 +1575,7 @@ footer {
     }
     #menuburgerimg {
         height: 60%;
-        top:18%;
+        top: 18%;
     }
     .animateburger {
         transform: translateX(-70px);
@@ -1154,23 +1583,20 @@ footer {
     #attentiontextwrapper h1 {
         font-size: 2.8em;
     }
-
     #attentiontextwrapper h2 {
         font-size: 1.8em;
     }
-    #lefthand{
+    #lefthand {
         left: -200px;
         top: -200px;
         width: 200px;
     }
-
-    #righthand{
+    #righthand {
         right: -200px;
         top: -200px;
         width: 200px;
     }
-    #desknav > li
-    {
+    #desknav>li {
         width: 130px;
     }
 }
@@ -1182,44 +1608,41 @@ footer {
     #attentiontextwrapper h1 {
         font-size: 3.2em;
     }
-
     #attentiontextwrapper h2 {
         font-size: 2em;
     }
-    #lefthand{
+    #lefthand {
         left: -280px;
         top: -280px;
         width: 230px;
     }
-
-    #righthand{
+    #righthand {
         right: -280px;
         top: -280px;
         width: 230px;
     }
-    #desknav > li
-    {
+    #desknav>li {
         width: 150px;
     }
 }
+
 @media all and (min-width: 1200px) {
     #menusection {
-        background-size:contain;
+        background-size: contain;
     }
-    #menuburgerimg{
-        top:15%;
+    #menuburgerimg {
+        top: 15%;
         height: 70%;
     }
     .animateburger {
         transform: translateX(-130px);
     }
-    #lefthand{
+    #lefthand {
         left: -280px;
         top: -280px;
         width: 270px;
     }
-
-    #righthand{
+    #righthand {
         right: -280px;
         top: -280px;
         width: 270px;
@@ -1233,29 +1656,20 @@ footer {
     #attentiontextwrapper h1 {
         font-size: 4em;
     }
-
     #attentiontextwrapper h2 {
         font-size: 2.5em;
     }
-
-    #lefthand{
+    #lefthand {
         left: -380px;
         top: -380px;
         width: 350px;
     }
-
-    #righthand{
+    #righthand {
         right: -370px;
         top: -370px;
         width: 340px;
     }
-    #desknav > li
-    {
+    #desknav>li {
         width: 170px;
     }
-
 }
-
-
-
-

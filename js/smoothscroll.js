@@ -81,6 +81,7 @@ win.scroll(function(event) {
     if($("#menu").visible(true)) {
         $("#menuburgerimg").addClass("animateburger");
     }
+    
 
 
 });

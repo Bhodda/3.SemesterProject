@@ -12,6 +12,8 @@ $(document).ready(function(){
         });
     }); 
 
+
+
     function isTablet() {
         if(window.innerWidth <= 856) {
             return true;
@@ -22,9 +24,40 @@ $(document).ready(function(){
 
 
 
+    $(function() {
+        $('.show-basket').on('click', function(){
+            if($('#check-out-wrapper').hasClass('open')) {
+                $('#check-out-wrapper').toggleClass('open');
+                setTimeout(function() {
+                    $('#check-out-wrapper').css('display', 'none');
+                }, 450);
+            } else {
+                $('#check-out-wrapper').css('display', 'block');
+                setTimeout(function() {
+                    $('#check-out-wrapper').toggleClass('open');
+                }, 10);
+            }
+        });
+    });
+    
+    $(function() {
+        $('.close-basket').on('click', function(){
+            $('#check-out-wrapper').removeClass('open');
+        });
+    }); 
+
+
+
+
+
     /* Flips the order section on its back which reveals the products that are available. Simple JQuery to control CSS classes*/
     $(function() {
         $('.orderbutton').on('click', function(){
+            $('#ordercard').toggleClass('flipped');
+        });
+    }); 
+    $(function() {
+        $('.orderfrontflip').on('click', function(){
             $('#ordercard').toggleClass('flipped');
         });
     }); 
