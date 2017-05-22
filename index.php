@@ -8,7 +8,6 @@
         <link rel="stylesheet" type="text/css" href="style/animate.css">
         <link rel="stylesheet" href="style/font-awesome.min.css">
         <link rel="icon" type="image/png" sizes="16x16" href="img/icon/favicon.png">
-        <?php require 'includes/connect.php' ?>
 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
@@ -27,7 +26,6 @@
                 <li><a href="#order">Order</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#location">Location</a></li>
-                <li><a href="#social">Social</a></li>
                 <li><a href="#gallery">Gallery</a></li>
             </nav><!-- desktop nav -->
 
@@ -40,7 +38,6 @@
                         <li><a href="#order">Order</a></li>
                         <li><a href="#menu">Menu</a></li>
                         <li><a href="#location">Location</a></li>
-                        <li><a href="#social">Social</a></li>
                         <li><a href="#gallery">Gallery</a></li>
                     </ul>
                 </div>  
@@ -51,6 +48,7 @@
 
 
     <body>
+
         <div id="overflowxwrapper">
             <section id="attention">
                 <div id="mobilblackbox"></div>
@@ -109,7 +107,7 @@
                     <section class="back" id="orderside">
                         <div class="widthwrapper">
                             <div id="menu-wrapper">
-                                <button class="orderbutton closeflipbutton">x</button>
+                                <button class="orderbutton closeflipbutton"><img src="img/icon/returnwhite.png"></button>
                                 <div id="burger-wrapper">
                                     <div class="menu-title"><h3>Burgers</h3></div>
                                     <div class="menu-description"><p>Salad, mayonnaise, ketchup, beef, tomatoes and pickles.</p></div>
@@ -156,7 +154,7 @@
                                                 <div class="cost-title">Discount (20%)</div>
                                                 <div class="cost-price"><textarea readonly class="price-style" name="discount" id="discount">kr. 0,00</textarea></div>
                                             </div>
-                                            <div class="cost-wrap" >
+                                            <div class="cost-wrap" id="totalcostwrap">
                                                 <div class="cost-title">Total</div>
                                                 <div class="cost-price"><textarea readonly class="price-style"  name="sumtotal" id="sumtotal">kr. 0,00</textarea></div>
                                             </div>
@@ -174,8 +172,6 @@
                                     </div>     
                                 </div>
                             </form>
-
-
                         </div>
                     </section>
                 </div>
@@ -205,7 +201,7 @@
                 </section>
             </section> <!-- Menu -->
 
-            <section class="flipcontainer">
+            <section class="flipcontainer" id="locationsection">
                 <div class="offsetanchor" id="location"></div>
                 <div id="locationcard" class="flipped card">
                     <section class="front" id="mapsection">
@@ -213,15 +209,16 @@
                         <div id="map"></div>
                         <div id="locationtextbox">
                             <h2 class="module">Our Location</h2>
+                            <p class="module">Come visit us in the heart of Kolding</p>
                             <ul>
                                 <li class="module">Torvegade 1</li>
                                 <li class="module">6000 Kolding</li>
-                                <li class="module">TLF: 71 43 44 57</li>
+                                <li class="module">TLF: (+45) 71 43 44 57</li>
                             </ul>
 
                             <div class="cl-effect-20 module">
                                 <a class="locationbutton">
-                                    <span data-hover="More about us!">More about us!</span>
+                                    <span data-hover="See opening hours!">See opening hours!</span>
                                 </a>
                             </div>
 
@@ -237,42 +234,91 @@
 
                             <div class="cl-effect-20 module">
                                 <a class="locationbutton">
-                                    <span data-hover="More about us!">More about us!</span>
+                                    <span data-hover="See opening hours!">See opening hours!</span>
                                 </a>
                             </div>
                             <hr class="line">
                         </div>
 
                     </section>
-                    <section class="back">
-                        <button class="locationbutton flipbutton"></button>
+                    <section class="back" id="aboutus">
+                        <div class="widthwrapper">
+
+                            <div id="aboutusleft">
+                                <div id="aboutusreturn"></div>
+                                <h2>Opening Hours</h2>
+                                <p>We are open almost every day of the week, so you can get the burger you crave!</p>
+                                <ul>
+                                    <li><span>Monday</span>Closed</li>
+                                    <li><span>Tuesday</span>11:00 - 20:00</li>
+                                    <li><span>Wednesday</span>11:00 - 20:00</li>
+                                    <li><span>Thursday</span>11:00 - 20:00</li>
+                                    <li><span>Friday</span>11:00 - 04:30</li>
+                                    <li><span>Saturday</span>11:00 - 04:30</li>
+                                    <li><span>Sunday</span>11:00 - 20:00</li>
+                                </ul>
+                            </div>
+                            <img src="img/aboutus.png" id="aboutusimg">
+                        </div>
                     </section>
                 </div>
             </section> <!-- Location -->
 
-
-            <section class="sectionplaceholder">
-                <div class="offsetanchor" id="social"></div>
-                <h1>Social Media</h1>
-
-            </section> <!-- Social Media -->
-
-
-            <section class="sectionplaceholder">
+            <section class="socialwrapper">
                 <div class="offsetanchor" id="gallery"></div>
-                <h1>Gallery</h1>
-            </section> <!-- Gallery -->
+                <div id="facebook">
+                    <h3 class="module">Follow us on Facebook</h3>
+                    <iframe id="facebookmodule" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffliptheburgerkolding&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="500" style="border:none; overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                </div>
+                <div id="instagram">
+                    <h2 class="module">Instagram Gallery</h2>
+                    <div id="instafeed" class="module"></div>
+                    <div class="cl-effect-20 module" id="see-more-btn">
+                        <a href="https://www.instagram.com/explore/locations/1029302781/">
+                            <span data-hover="See more photos">See more photos</span>
+                        </a>
+                    </div>
+                </div>
+
+            </section>
 
         </div>
     </body>
 
 
     <footer>
+        <div class="widthwrapper">
+            <ul id="footeropeninghours">
+                <h4>Opening hours</h4>
+                <li><span>Monday</span>Closed</li>
+                <li><span>Tuesday</span>11:00 - 20:00</li>
+                <li><span>Wednesday</span>11:00 - 20:00</li>
+                <li><span>Thursday</span>11:00 - 20:00</li>
+                <li><span>Friday</span>11:00 - 04:30</li>
+                <li><span>Saturday</span>11:00 - 04:30</li>
+                <li><span>Sunday</span>11:00 - 20:00</li>
+            </ul>
 
+            <ul id="footercontactus">
+                <h4>Contact us</h4>
+                <li><i class="fa fa-lg fa-fw fa-phone"></i>(+45) 71 43 44 57</li>
+                <li><i class="fa fa-lg fa-fw fa-map-marker"></i>Torvegade 1, Kolding 6000</li>
+                <li><i class="fa fa-lg fa-fw fa-envelope"></i>burger@fliptheburger.com</li>
+            </ul>
+
+            <div id="footersocialwrapper">
+                <h4>Follow us on Facebook</h4>
+                <a href="#"><i class="fa fa-lg fa-fw fa-facebook"></i></a>
+
+            </div>
+        </div>
     </footer>
+
+
     <script src="js/script.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/map.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTNka5TklevgyBMCcF-8awi2HS3ZNbgKw&callback=initMap"></script>
     <script src="js/common.js"></script>
+    <script type="text/javascript" src="js/instafeed.min.js"></script>
 </html>

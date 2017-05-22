@@ -52,6 +52,7 @@ body {
 
 #overflowxwrapper {
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .alignbottom {
@@ -277,7 +278,7 @@ header {
 .offsetanchor {
     display: block;
     position: relative;
-    top: -140px;
+    top: -110px;
     visibility: hidden;
 }
 
@@ -480,11 +481,11 @@ input {
 
 /* -- Order .back -- */
 #orderside {
-    background: #fff1df;
-    background: -webkit-linear-gradient(45deg, #fff1df , #ffd7a3 , #fff1df  , #ffd7a3);
-    background: -o-linear-gradient(45deg, #fff1df , #ffd7a3 , #fff1df  , #ffd7a3);
-    background: -moz-linear-gradient(45deg, #fff1df , #ffd7a3 , #fff1df  , #ffd7a3);
-    background: linear-gradient(45deg, #fff1df , #ffd7a3 , #fff1df  , #ffd7a3);
+    background: #f2ba70;
+    background: -webkit-linear-gradient(60deg, #ffb73a , #f2ba70 , #efc885 , #ffce78);
+    background: -o-linear-gradient(60deg, #ffb73a , #f2ba70 , #efc885 , #ffce78);
+    background: -moz-linear-gradient(60deg, #ffb73a , #f2ba70 , #efc885 , #ffce78);
+    background: linear-gradient(60deg, #ffb73a , #f2ba70 , #efc885 , #ffce78);  
     padding-top: 23px;
 }
 #menu-wrapper {
@@ -708,15 +709,6 @@ input {
 }
 
 
-.goback-btn {
-
-}
-
-.goback-btn:hover {
-
-}
-
-
 .price-style {
     border: none;
     resize: none;
@@ -743,6 +735,14 @@ input {
     font-family: Circularfont;
     line-height: 28px;
     height: 28px;
+}
+
+#sumtotal {
+    font-weight: bold;
+}
+
+#totalcostwrap {
+    border-top: 1px solid #FFCA83;
 }
 
 .line {
@@ -814,6 +814,10 @@ input {
 
 /* -- Location -- */
 
+#locationsection {
+    z-index: 3;
+}
+
 #mapsection {
     background: #f2f2f2;
     position: relative;
@@ -839,17 +843,267 @@ input {
     color: #fca309;
     font-size: 3em;
     padding-top: 90px;
+    padding-bottom: 20px;
 }
 
 #locationtextbox ul {
     list-style: none;
     font-size: 1.3em;
     line-height: 2em;
-    margin-bottom: 65px;
-    margin-top: 35px;
+    margin-bottom: 35px;
+    margin-top: 25px;
+    font-weight: bold;
+}
+#locationtextbox p {
+    font-family: Circularfont;
+    font-size: 1.15em;
+    line-height: 1.5em;
+}
+
+/* -- about us -- */
+
+#aboutus {
+    background: #f2ba70;
+    background: -webkit-linear-gradient(60deg, #ffb73a , #f2ba70 , #efc885 , #ffce78);
+    background: -o-linear-gradient(60deg, #ffb73a , #f2ba70 , #efc885 , #ffce78);
+    background: -moz-linear-gradient(60deg, #ffb73a , #f2ba70 , #efc885 , #ffce78);
+    background: linear-gradient(60deg, #ffb73a , #f2ba70 , #efc885 , #ffce78);   
+    overflow: visible;
+}
+#aboutus > widthwrapper {
+    overflow: visible;
+}
+
+#aboutus h2 {
+    font-family: PorticoRough;
+    color: #fff;
+    font-size: 2.8em;
+    padding-top: 25px;
+    padding-bottom: 5px;
+    width: 120%;
+}
+
+#aboutus p {
+    font-family: Circularfont;
+    font-size: 1.15em;
+    line-height: 1.5em;
+    margin-bottom: 30px;    
+}
+
+#aboutusleft {
+    position: relative;
+}
+
+#aboutusright {
+    width: 34%;
+    padding: 3%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9;
+}
+
+#aboutusimg {
+    position: absolute;
+    right: 0;
+    bottom: -55px;
+    z-index: 9;
+    width: 600px;
+}
+
+#aboutus ul {
+    width: 88%;
+    list-style: none;
+    margin: 6%;
+    line-height: 1.5em;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+#aboutus ul li {
+    color: #000;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    padding-bottom: 4px;    
+    text-align: right;
+    border-bottom: 1px solid #000;
+}
+
+#aboutus ul li span {
+    font-weight: bold;
+    float: left;
+}
+
+#aboutusreturn {
+    position: absolute;
+    left:5px;
+    top:5px;
+    cursor: pointer;
+    width: 35px; 
+    height: 35px;
+    background: url(../img/icon/returnwhite.png) center no-repeat;
+    transition: all 0.5s;
+}
+
+#aboutusreturn:hover, #aboutusreturn:active {
+    transform: scale(1.15);
 }
 
 
+/* -- Social -- */
+
+.socialwrapper {
+    z-index: 2;
+    position: relative;
+    height: auto;
+}
+
+#instagram {
+    height: 100%;
+    padding: 3% 0;
+    width: 60%;
+    background: #fff;
+}
+#instagram h2 {
+    font-family: PorticoRough;
+    font-size: 2.8em;
+    padding-bottom: 35px;
+    color: #fca309;
+    text-align: center;
+}
+#instafeed {
+    width: 85%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+#instafeed img {
+    position: relative;
+    z-index: 4;
+    margin-bottom: -5px;
+    padding: 0;
+    width:25%;
+
+    transition: all 0.4s;
+    outline: 1px solid #333;
+}
+
+#instafeed img:hover {
+    z-index: 5;
+    transform: scale(1.1);
+}
+
+#instafeed img:active {
+    transform: scale(1.1);
+}
+
+#see-more-btn {
+    text-align: center;
+}
+
+#facebook {
+    float: none;
+    width: 40%;
+
+    padding: 3% 0;
+    background: #f2ba70;
+    background: -webkit-linear-gradient(60deg, #ffb73a , #f2ba70 , #efc885 , #ffce78);
+    background: -o-linear-gradient(60deg, #ffb73a , #f2ba70 , #efc885 , #ffce78);
+    background: -moz-linear-gradient(60deg, #ffb73a , #f2ba70 , #efc885 , #ffce78);
+    background: linear-gradient(60deg, #ffb73a , #f2ba70 , #efc885 , #ffce78);
+    text-align: center;
+}
+#facebook h3 {
+    font-family: PorticoRough;
+    font-size: 2.3em;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+    padding-bottom: 50px;
+}
+#facebookmodule {
+    overflow-x: scroll;
+    outline: #fff 15px solid;
+}
+
+/* -- Footer -- */
+footer {
+    background-color: #353535;
+    margin: 0;
+}
+
+footer ul {
+    display: inline-block;
+    width: 29%;
+    list-style: none;
+    line-height: 1.5em;
+    margin: 0 2.5%;
+    vertical-align: top;
+}
+
+footer h4 {
+    text-align: center;
+    padding-bottom: 15px;
+    color: #fff;
+    font-size: 1.4em;
+}
+
+footer ul li {
+    color: #fff;
+    font-size: 1.05em;
+    margin-bottom: 8px;
+    padding-bottom: 4px;    
+    text-align: right;
+}
+
+#footeropeninghours li {
+    border-bottom: 1px solid #fff;
+}
+
+footer ul li span {
+    font-weight: bold;
+    float: left;
+}
+
+#footercontactus li {
+    text-align: center;
+    position: relative;
+
+}
+#footercontactus i {
+    float: left;
+    position: absolute;
+    left: -20px;
+}
+
+
+#footercontactus h4 {
+    padding-bottom: 30px;
+}
+
+#footersocialwrapper {
+    display: inline-block;
+    width: 25%;
+    margin: 0 2.5%;
+    text-align: center;
+}
+
+#footersocialwrapper h4{
+    padding-bottom: 40px;
+}
+
+#footersocialwrapper a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.5em;
+    transition: all 0.3s;
+}
+
+
+#footersocialwrapper a:hover, #footersocialwrapper a:active {
+    color: #fca309;
+}
 /* -- flippin -- (URL: https://desandro.github.io/3dtransforms/docs/card-flip.html) */
 
 .flipcontainer {
@@ -865,7 +1119,7 @@ input {
     position: absolute;
     transform-style: preserve-3d;
     transition: transform 1.5s;
-    box-shadow: 0px 5px 50px #000;
+    box-shadow: 0px 0px 30px #444;
 }
 
 .card section {
@@ -880,30 +1134,25 @@ input {
     backface-visibility: hidden;
     position: relative;
     float: left;
-    top: -13px;
-    left: -13px;
-    height: 26px;
-    width: 26px;
+    top: -15px;
+    left: -20px;
+    height: 48px;
+    width: 48px;
     border-radius: 48px;
     color: #ffffff;
     font-size: 20px;
     background: #fca309;
     text-decoration: none;
     border: none;
-    padding-bottom: 4px;
     text-align: center;
-    transform: scale(1.2);
     z-index: 7;
+    transition: all 0.5s;
 }
 .closeflipbutton:hover, .closeflipbutton:active {
     background: #ebdb8a;
     text-decoration: none;
     cursor: pointer;
-}
-
-.flipbutton {
-    width: 80px;
-    height: 50px;
+    transform: scale(1.15);
 }
 
 .card .front {
@@ -934,11 +1183,7 @@ input {
 }
 
 
-/* -- Footer -- */
 
-footer {
-    height: 400px;
-}
 
 
 /* nav hover/active effects (URL: https://tympanus.net/codrops/2013/08/06/creative-link-effects/) */
@@ -1072,9 +1317,54 @@ footer {
     background-color: #fca309;
 }
 
+
 /* -- MediaQ -- */
 
 @media all and (min-width: 0px) {
+    #instafeed img {
+        width: 50%;
+    }
+    #instagram {
+        width: 100%;
+        padding: 10% 0;
+    }
+    #facebook {
+        width: 100%;
+        padding: 10% 0;
+    }
+    footer {
+        padding: 8% 0;
+    }
+    #footercontactus i {
+        display: none;
+    }
+    #footeropeninghours {
+        width: 90%;
+        margin: 0 5%;
+    }
+    #footercontactus {
+        width: 90%;
+        margin: 40px 5%;
+    }
+    #footersocialwrapper {
+        width: 90%;
+        margin: 20px 5%;
+    }
+    #aboutus p {
+        text-align: center;
+        display: none;
+    }
+    #aboutus h2 {
+        text-align: center;
+        width: 100%
+    }
+    #aboutusleft {
+        width: 94%;
+        padding: 3%;
+    }
+    #aboutusimg {
+        display: none;
+    }
     #order-form {
         margin-bottom: 15px;
         width: 50%;
@@ -1271,6 +1561,13 @@ footer {
 }
 
 @media all and (min-width: 300px) {
+    #footercontactus i {
+        display: block;
+    }
+    #footercontactus {
+        width: 80%;
+        margin: 40px 10%;
+    }
     #check-out-wrapper {
         height: 92%;
     }
@@ -1321,6 +1618,16 @@ footer {
 }
 
 @media all and (min-width: 380px) {
+    footer {
+        padding: 6% 0;
+    }
+    #footercontactus {
+        width: 66%;
+        margin: 40px 17%;
+    }
+    #aboutus p {
+        display: block;
+    }
     #check-out-wrapper {
         height: 94%;
     }
@@ -1356,6 +1663,10 @@ footer {
 }
 
 @media all and (min-width: 450px) {
+    #footercontactus {
+        width: 56%;
+        margin: 40px 22%;
+    }
     #check-out-wrapper {
         height: 90%;
     }
@@ -1379,6 +1690,13 @@ footer {
 }
 
 @media all and (min-width: 550px) {
+    footer {
+        padding: 4% 0;
+    }
+    #footercontactus {
+        width: 46%;
+        margin: 40px 27%;
+    }
     #map {
         height: 100%;
         width: 60%;
@@ -1410,6 +1728,47 @@ footer {
 }
 
 @media all and (min-width: 650px) {
+    #instafeed img {
+        width: 33.3%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .socialwrapper {
+        height: 612px;
+    }
+    #instagram {
+        padding: 7% 0;
+        width: 60%;
+    }
+    #facebook {
+        width: 40%;
+        padding: 3% 0;
+        float: right;
+    }
+    #facebook h3 {
+        padding-top: 10px;
+        font-size: 1.4em;
+        padding-bottom: 20px;
+    }
+    #facebookmodule {
+        width: 250px;
+    }
+    footer {
+        padding: 3% 0;
+    }
+    #footeropeninghours {
+        width: 29%;
+        margin: 0 2.5%;
+    }
+    #footercontactus {
+        width: 34%;
+        margin: 0 2.5%;
+    }
+    #footersocialwrapper {
+        width: 20%;
+        margin: 0 2.5%;
+    }
     #check-out {
         height: 159px;
     }
@@ -1488,6 +1847,48 @@ footer {
 }
 
 @media all and (min-width: 769px) {
+    #facebook h3 {
+        padding-top: 10px;
+        font-size: 1.4em;
+        padding-bottom: 20px;
+    }
+    #facebookmodule {
+        width: 280px;
+    }
+    #footeropeninghours {
+        width: 29%;
+    }
+    #footercontactus {
+        width: 33%;
+    }
+    #footersocialwrapper {
+        width: 21%;
+    }
+    #footercontactus i {
+        left: -25px;
+    }
+    #aboutus h2 {
+        text-align: left;
+        width: 120%;
+    }
+    #aboutus p {
+        text-align: left;
+    }
+    aboutus ul {
+        width: 75%
+    }
+    #aboutusleft {
+        width: 45%;
+        padding: 0;
+        padding-left: 3%;
+        padding-top: 3%;
+        position: relative;
+    }
+    #aboutusimg {
+        right: -6%;
+        width: 470px;
+        display: block;
+    }
     #ordersection {
         height: 512px;
     }
@@ -1569,7 +1970,49 @@ footer {
     }
 }
 
+
+@media all and (min-width: 840px) {
+    #instagram {
+        padding: 3% 0;
+    }
+    #facebook h3 {
+        padding-top: 20px;
+        font-size: 1.4em;
+        padding-bottom: 20px;
+    }
+    #facebookmodule {
+        width: 310px;
+    }
+    #footercontactus i {
+        left: -10px;
+    }
+    #aboutusimg {
+        right: -5%;
+        width: 500px;
+    }
+    #aboutus h2 {
+        width: 100%;
+    }
+}
+
 @media all and (min-width: 960px) {
+    #facebook h3 {
+        padding-top: 10px;
+        font-size: 1.5em;
+        padding-bottom: 30px;
+    }
+    #facebookmodule {
+        width: 360px;
+    }
+    #footercontactus i {
+        left: 0;
+    }
+
+    #aboutusimg {
+        right: -4%;
+        width: 560px;
+    }
+
     #menusection .sectiontextboxleft {
         width: 60%;
     }
@@ -1602,6 +2045,24 @@ footer {
 }
 
 @media all and (min-width: 1020px) {
+    #facebook h3 {
+        padding-top: 0;
+        font-size: 1.7em;
+        padding-bottom: 40px;
+    }
+    #facebookmodule {
+        width: 420px;
+    }
+    #footercontactus i {
+        left: 10px;
+    }
+    #aboutusimg {
+        right: -3.5%;
+        width: 600px;
+    }
+    #aboutusleft {
+        margin-left: 0;
+    }
     .animateburger {
         transform: translateX(-100px);
     }
@@ -1627,6 +2088,31 @@ footer {
 }
 
 @media all and (min-width: 1200px) {
+    #instafeed img {
+        width: 25%;
+    }
+    #facebookmodule {
+        width: 500px;
+    }
+    #instagram h2 {
+        padding-top: 30px;
+    }
+
+    #facebook h3 {
+        font-size: 2em;
+        padding-bottom: 50px;
+    }
+    #aboutusreturn {
+        left:-20px;
+        top:17px;
+    }
+    #aboutusimg {
+        right: -2%;
+    }
+    #aboutusleft {
+        margin-left: 1%;
+    }
+
     #menusection {
         background-size: contain;
     }
@@ -1650,6 +2136,25 @@ footer {
 }
 
 @media all and (min-width: 1440px) {
+    #instagram h2 {
+        padding-top: 10px;
+    }
+    #facebook h3 {
+        font-size: 2.3em;
+        padding-bottom: 50px;
+    }
+    #facebook {
+        height: 582px;
+    }
+    .socialwrapper {
+        height: 662px;
+    }
+    #aboutusleft {
+        margin-left: 3%;
+    }
+    #aboutusimg {
+        right: 2%;
+    }
     .animateburger {
         transform: translateX(-150px);
     }
@@ -1671,5 +2176,26 @@ footer {
     }
     #desknav>li {
         width: 170px;
+    }
+}
+@media all and (min-width: 1600px) {
+    .socialwrapper {
+        height: 662px;
+    }
+    #facebook {
+        height: 612px;
+    }
+
+}
+
+@media all and (min-width: 1800px) {
+    #aboutusimg {
+        right: 10%;
+    }
+    .socialwrapper {
+        height: 762px;
+    }
+    #facebook {
+        height: 662px;
     }
 }

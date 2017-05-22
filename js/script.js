@@ -15,7 +15,7 @@ $(document).ready(function(){
 
 
     function isTablet() {
-        if(window.innerWidth <= 856) {
+        if(window.innerWidth <= 768) {
             return true;
         } else {
             return false;
@@ -45,6 +45,8 @@ $(document).ready(function(){
             $('#check-out-wrapper').removeClass('open');
         });
     }); 
+    
+    
 
 
 
@@ -66,7 +68,11 @@ $(document).ready(function(){
             $('#locationcard').toggleClass('flipped');
         });
     }); 
-
+    $(function() {
+        $('#aboutusreturn').on('click', function(){
+            $('#locationcard').toggleClass('flipped');
+        });
+    }); 
 
 
     /* moves in the hands of the attention section after a delay by controlling classes */
