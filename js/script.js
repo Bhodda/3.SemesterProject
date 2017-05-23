@@ -39,14 +39,14 @@ $(document).ready(function(){
             }
         });
     });
-    
+
     $(function() {
         $('.close-basket').on('click', function(){
             $('#check-out-wrapper').removeClass('open');
         });
     }); 
-    
-    
+
+
 
 
 
@@ -102,4 +102,16 @@ $(document).ready(function(){
     }); 
 
 
+    //errorhandling for the ordersection
+    $(".orderinputfield").on("focusout keyup" ,function() {
+        if($("#phone").val().length > 15 || $("#phone").val().length <= 0 || !$.isNumeric($("#phone").val()) || $("#name").val().length > 40 || $("#name").val().length <= 0 || $.isNumeric($("#name").val())) {
+            $(".buttondisable").show();
+            $(".cl-effect-20 a span").css("background", "#e5e5e5");
+            $(".cl-effect-20 a span").css("box-shadow", "inset 0 3px #969696");
+        } else {
+            $(".buttondisable").hide();
+            $(".cl-effect-20 a span").css("background", "#fca309");
+            $(".cl-effect-20 a span").css("box-shadow", "inset 0 3px #724c0b");
+        }
+    });  
 });

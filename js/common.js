@@ -1,62 +1,74 @@
 var sum = 0;
-var num = 1;
-
 $(document).ready(function() {
-	//Assign the producets a price date
-	$("#product1").data("price", '49,00').data("name", 'Burger');
-	$("#product2").data("price", '54,00').data("name", 'Cheese Burger');
-	$("#product3").data("price", '54,00').data("name", 'Bacon burger');
-	$("#product4").data("price", '59,00').data("name", 'Bacon Cheeseburger');
-	$("#product5").data("price", '64,00').data("name", 'Double Burger');
-	$("#product6").data("price", '69,00').data("name", 'Double Cheeseburger');
-	$("#product7").data("price", '69,00').data("name", 'Double Bacon Burger');
-	$("#product8").data("price", '74,00').data("name", 'Double Bacon Cheese Burger');
-	$("#product9").data("price", '39,00').data("name", 'Snack box');
-	$("#product10").data("price", '89,00').data("name", 'Burger Menu');
-	$("#product11").data("price", '94,00').data("name", 'Cheeseburger Menu');
-	$("#product12").data("price", '99,00').data("name", 'Bacon Cheeseburger Menu');
-	$("#product13").data("price", '104,00').data("name", 'Double Burger Menu');
-	$("#product14").data("price", '109,00').data("name", 'Double Cheeseburger Menu');
-	$("#product15").data("price", '109,00').data("name", 'Double Bacon Burger Menu');
-	$("#product16").data("price", '114,00').data("name", 'Double Bacon Cheeseburger Menu');
-	$("#product17").data("price", '29,00').data("name", 'Fries');
-
-	//Adding the requested producted to the shopping cart
-	$(".add-to-check-out").on("click", function(evt) {
-		var productID = $(this).attr("id");
-		$("<div>", {
-			html: "<div class='remove-product'><button class='remove-btn' id=" + productID + " data-num=" + num++ +">-</button></div><div class='selected-prod-name'><textarea readonly name='order_details' class='selected-prod-title prod-style'>1x " + $(this).data("name") + "</textarea></div><div class='selected-prod-price'><p>kr. " + $(this).data("price") + "</p></div>",
-			"class": 'selected-product animated fadeInDown', "data-price": $(this).data("price")
-		}).prependTo("#check-out");
-		//summing up the overall price
-		sum = sum + parseInt($(this).data("price"));
-		$("#subtotal").text("kr. " + sum);
-
-		//discount from subtotal
-		discount = parseInt(sum/100*20);
-		$("#discount").text("kr. " + discount);
-
-		//total amount
-		sumtotal = parseInt(sum-discount);
-		$("#sumtotal").text("kr. " + sumtotal);
+	/* Adding product the the check-out*/
+	$(".add-to-check-out").click(function() {
+		var productID = this.getAttribute("data-prodID");
+		$.get("includes/getProdInfo.php?product_id=" + productID, function(data) {
+			console.log(data);
+			if (data == false) {
+				console.log("There is no information about the product");
+			} else {
+				console.log("Product information found");
+				console.log(data.product_id);
+				console.log(data.product_name);
+				console.log(data.product_price);
+				$("<div>", {
+					html: "<div class='remove-product'><button class='remove-btn' id=" + data.product_id + ">-</button></div><div class='selected-prod-name'><textarea readonly name='product_name' class='selected-prod-title prod-style'> 1x " + data.product_name + "</textarea></div><div class='selected-prod-price'><p>kr. " + data.product_price + "</p></div>",
+					"class": 'selected-product animated fadeInDown',
+					"data-price": data.product_price,
+					"data-productID": data.product_id,
+					"data-product-name": data.product_name
+				}).prependTo("#check-out");
+			}
+			$('.selected-product').length;
+			var basketProd = $('.selected-product').length;
+			/* Total price of selected products */
+			sum = sum + parseInt(data.product_price);
+			$("#subtotal").text("kr. " + sum.toFixed(2));
+			/* Discount bsed on seleted products */
+			discount = parseInt(sum / 100 * 20);
+			$("#discount").text("kr. " + discount.toFixed(2));
+			/* Total amount after discount */
+			sumtotal = parseInt(sum - discount);
+			$("#sumtotal").text("kr. " + sumtotal.toFixed(2));
+			$("#basket-sum").text(basketProd);
+		});
 	});
-    
-	//Delete product from the shopping cart
+	/* Remove selected product from a cart and recalculate total price */
 	$("#check-out").on("click", ".remove-product", function(evt) {
 		$(this).parent("div").remove();
+		$('.selected-product').length;
+		var basketProd = $('.selected-product').length;
 		sum = sum - parseInt($(this).parent("div").data("price"));
-		discount = discount = parseInt(sum/100*20);
-		sumtotal = parseInt(sum-discount);
-		$("#subtotal").text("kr. " + sum);
-		$("#discount").text("kr. " + discount);
-		$("#sumtotal").text("kr. " + sumtotal);
+		discount = discount = parseInt(sum / 100 * 20);
+		sumtotal = parseInt(sum - discount);
+		$("#subtotal").text("kr." + sum.toFixed(2));
+		$("#discount").text("kr. " + discount.toFixed(2));
+		$("#sumtotal").text("kr. " + sumtotal.toFixed(2));
+		$("#basket-sum").text(basketProd);
 	});
-
-
-	// $("#check-out").click(function(e) {
-	// 	$(".selected-product").addClass("fadeOutUp");
-	// 	$(".selected-product").removeClass("fadeInDown");
-	// });
-
-
+	/* Include information from first contact form into check-out */
+	$('input[name=order-name]').on("keyup", function(e) {
+		$('[name=name]').val($(this).val())
+	});
+	$('input[name=order-phone]').on("keyup", function(e) {
+		$('[name=phone_nr]').val($(this).val())
+	});
+	$(".confirm-btn").click(function(event) {
+		// JWB: Use this when debugging to turn off the sending of the form data when submit is clicked
+		// event.preventDefault();
+		// Create the order_line
+		var order_line = "";
+		// for each of the products in the order
+		$(".selected-product").each(function() {
+			// get the productID
+			var productName = this.getAttribute("data-product-name");
+			console.log("added: " + productName);
+			// add to order-line
+			order_line += productName + "; ";
+		});
+		// add the order_line values to the hidden form element
+		$("#order-line").attr("value", order_line);
+		console.log("The final order-line: " + $("#order-line").attr("value"));
+	});
 });

@@ -9,11 +9,6 @@
 }
 
 @font-face {
-    font-family: PorticoLightRough;
-    src: url(PorticoLightRough.otf);
-}
-
-@font-face {
     font-family: PorticoOutline;
     src: url(PorticoOutline.otf);
 }
@@ -496,7 +491,7 @@ input {
     margin-right: 2%;
 }
 
-#burger-wrapper {
+.burger-wrapper {
     margin: 16px 24px;
     line-height: 30px;
 }
@@ -1034,10 +1029,13 @@ footer {
 }
 
 footer ul {
-    display: inline-block;
-    width: 29%;
     list-style: none;
     line-height: 1.5em;
+}
+
+.footercontentwrapper {
+    display: inline-block;
+    width: 29%;
     margin: 0 2.5%;
     vertical-align: top;
 }
@@ -1057,7 +1055,7 @@ footer ul li {
     text-align: right;
 }
 
-#footeropeninghours li {
+#openinghoursfooter li {
     border-bottom: 1px solid #fff;
 }
 
@@ -1214,6 +1212,10 @@ footer ul li span {
     transform: translateY(0px);
 }
 
+.cl-effect-20 {
+    position: relative;
+}
+
 .cl-effect-20 a {
     line-height: 3em;
     -webkit-perspective: 800px;
@@ -1242,6 +1244,7 @@ footer ul li span {
     -webkit-transform-origin: 0% 50%;
     -moz-transform-origin: 0% 50%;
     transform-origin: 0% 50%;
+    z-index: 3;
 }
 
 .cl-effect-20 a span::before {
@@ -1250,7 +1253,7 @@ footer ul li span {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #fff;
+    background: #ffeccb;
     color: #fca309;
     content: attr(data-hover);
     -webkit-transform: rotateX(270deg);
@@ -1278,7 +1281,19 @@ footer ul li span {
     transform: rotateX(10deg);
 }
 
+.buttondisable{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+}
 
+.disabled {
+    background: #e5e5e5;
+    box-shadow: inset 0 3px #969696;
+}
 
 /* styling for small animations when elements enter viewport look in smoothscroll.js for source and description*/
 
@@ -1338,12 +1353,12 @@ footer ul li span {
     #footercontactus i {
         display: none;
     }
-    #footeropeninghours {
+    .footercontentwrapper {
         width: 90%;
         margin: 0 5%;
     }
     #footercontactus {
-        width: 90%;
+        
         margin: 40px 5%;
     }
     #footersocialwrapper {
@@ -1565,7 +1580,6 @@ footer ul li span {
         display: block;
     }
     #footercontactus {
-        width: 80%;
         margin: 40px 10%;
     }
     #check-out-wrapper {
@@ -1622,7 +1636,7 @@ footer ul li span {
         padding: 6% 0;
     }
     #footercontactus {
-        width: 66%;
+        
         margin: 40px 17%;
     }
     #aboutus p {
@@ -1664,7 +1678,7 @@ footer ul li span {
 
 @media all and (min-width: 450px) {
     #footercontactus {
-        width: 56%;
+        
         margin: 40px 22%;
     }
     #check-out-wrapper {
@@ -1694,7 +1708,7 @@ footer ul li span {
         padding: 4% 0;
     }
     #footercontactus {
-        width: 46%;
+        
         margin: 40px 27%;
     }
     #map {
@@ -1757,12 +1771,13 @@ footer ul li span {
     footer {
         padding: 3% 0;
     }
-    #footeropeninghours {
+    .footercontentwrapper {
         width: 29%;
         margin: 0 2.5%;
     }
     #footercontactus {
-        width: 34%;
+        
+        
         margin: 0 2.5%;
     }
     #footersocialwrapper {
@@ -1855,11 +1870,8 @@ footer ul li span {
     #facebookmodule {
         width: 280px;
     }
-    #footeropeninghours {
+    .footercontentwrapper {
         width: 29%;
-    }
-    #footercontactus {
-        width: 33%;
     }
     #footersocialwrapper {
         width: 21%;
