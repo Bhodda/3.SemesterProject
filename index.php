@@ -99,8 +99,7 @@
                             </form>
                             <div class="cl-effect-20 module">
                                 <a class="orderfrontflip">
-                                    <span data-hover="Order now!">Order now!</span>
-
+                                    <span data-hover="Order now!"  id="ordernowbutton">Order now!</span>
                                 </a>
                                 <div class="buttondisable"></div>
                             </div>
@@ -198,13 +197,6 @@
                             <li class="module">The Snack Box - Mozerella sticks, chilli cheese and onion rings.</li>
                             <li class="module">The Drinks - Soda, cocio, water or coffee.</li>
                         </ul>
-                        <div class="cl-effect-20 module">
-                            <a href="menu.pdf">
-                                <span data-hover="See the full menu">See the full menu</span>
-                            </a>
-                        </div>
-
-
                     </div>
                 </section>
             </section> <!-- Menu -->
@@ -288,7 +280,7 @@
                     </div>
                 </div>
 
-            </section>
+            </section><!-- Social Media -->
 
         </div>
 

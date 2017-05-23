@@ -167,6 +167,7 @@ header {
     margin-top: 5px;
     margin-right: 15px;
     background: url(../img/icon/basket.png) center;
+    position: relative;
 }
 
 .close-basket {
@@ -177,6 +178,20 @@ header {
     width: 25px; 
     height: 25px;
     background: url(../img/icon/return.png) center;
+}
+
+#basket-sum {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 17px;
+    width: 23px;
+    height: 22px;
+    padding-top: 1px;
+    border-radius: 50px;
+    background: #fca309;
+    text-align: center;
+    color: white;
 }
 
 .mobilnav li {
